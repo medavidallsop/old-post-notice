@@ -60,7 +60,7 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 		public function assets_public() {
 
-			// Enqueue assets on frontend if is a post and the styling setting is not none
+			// Enqueue assets on frontend if it is a post and the styling setting is not none
 
 			if ( is_single() ) {
 
