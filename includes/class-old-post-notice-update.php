@@ -30,7 +30,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 						'position'			=> 'before',
 						'styling'			=> 'default',
 						'color_background'	=> '#0000ff',
-						'color_text'			=> '#ffffff',
+						'color_text'		=> '#ffffff',
 					);
 
 					update_option( 'old_post_notice_settings', $default_settings );
