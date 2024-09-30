@@ -23,7 +23,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 				if ( version_compare( $version, '1.0.0', '<' ) ) {
 
 					$default_settings = array(
-						// 'enable' not included as the default is disabled and if saving the settings via the page 'enable' is not included in the array
+						// 'enable' not included as the default is disabled and if saving the settings via the page 'enable' is not set and therefore not included in the array
 						'notice'			=> esc_html__( 'This post is old, the information may be outdated.', 'old-post-notice' ),
 						'days'				=> '365',
 						'date'				=> 'published',

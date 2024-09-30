@@ -125,7 +125,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'id'			=> 'styling',
 					'label'			=> esc_html__( 'Styling', 'old-post-notice' ),
 					// translators: %s: class name
-					'description'	=> sprintf( esc_html__( 'Choose the styling type. The default option adds some basic styling and uses the background/text colors set below. Use the none option if you wish to style the notice yourself with CSS by targeting the %s class.', 'old-post-notice' ), '<code>old-post-notice</code>' ),
+					'description'	=> sprintf( esc_html__( 'Choose the styling type. The default option adds some basic styling and uses the background/text colors set below. Use the none option if you wish to style the notice with CSS by targeting the %s class.', 'old-post-notice' ), '<code>old-post-notice</code>' ),
 					'type'			=> 'select',
 					'options'		=> array(
 						'default'	=> esc_html__( 'Default', 'old-post-notice' ),
