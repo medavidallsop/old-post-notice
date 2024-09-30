@@ -30,7 +30,7 @@ After installation you'll find the settings in **Settings > Old Post Notice**, o
 
 = Contribute =
 
-If you wish to help contribute towards the development of this plugin you can do so via the [GitHub repository](https://github.com/medavidallsop/old-post-notice).
+Help contribute towards the development of this plugin via the [GitHub repository](https://github.com/medavidallsop/old-post-notice).
 
 == Screenshots ==
 
