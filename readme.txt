@@ -34,7 +34,8 @@ If you wish to help contribute towards the development of this plugin you can do
 
 == Screenshots ==
 
-1. xxx
+1. Notice displayed on an old post
+2. Settings to configure the notice
 
 == Frequently Asked Questions ==
 
