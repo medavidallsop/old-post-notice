@@ -11,6 +11,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 		public function __construct() {
 
 			add_action( 'admin_menu', array( $this, 'page' ) );
+			add_action( 'admin_notices', array( $this, 'notices' ) );
 			add_action( 'admin_init', array( $this, 'register' ) );
 			add_filter( 'plugin_action_links_' . OLD_POST_NOTICE_BASENAME, array( $this, 'plugins_link' ) );
 
@@ -27,6 +28,39 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				'old-post-notice',
 				array( $this, 'page_render' ),
 			);
+
+		}
+
+		public function notices() {
+
+			// Shows notices on the settings page
+
+			global $pagenow;
+
+			if ( 'options-general.php' == $pagenow ) {
+
+				if ( isset( $_GET['page'] ) ) {
+
+					if ( 'old-post-notice' == sanitize_text_field( $_GET['page'] ) ) {
+
+						$settings = get_option( 'old_post_notice_settings' );
+
+						if ( isset( $settings['nag'] ) ) {
+
+							if ( '1' == $settings['nag'] ) {
+
+								// translators: %1$s: sponsor link, %2$s: review link
+								echo '<div class="notice notice-success"><p>' . sprintf( esc_html__( 'Hello! I\'m David, I develop this plugin in my spare time. If it has helped you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me commit more time to development and keeps it free. You can disable this nag below.', 'internal-tags' ), '<a href="https://github.com/sponsors/medavidallsop" target="_blank">' . esc_html__( 'sponsoring me on GitHub', 'internal-tags' ) . '</a>', '<a href="https://wordpress.org/support/plugin/old-post-notice/reviews/#new-post" target="_blank">' . esc_html__( 'leaving a review', 'internal-tags' ) . '</a>' ) . '</p></div>';
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
 
 		}
 
@@ -58,7 +92,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'id'			=> 'notice',
 					'label'			=> esc_html__( 'Notice', 'old-post-notice' ),
 					// translators: %s: date placeholder
-					'description'	=> sprintf( esc_html__( 'The notice which will be displayed on old posts. Use %s to include the date.', 'old-post-notice' ), '<code>[date]</code>' ),
+					'description'	=> sprintf( esc_html__( 'Enter the notice you want to be displayed on old posts. Use %s to include the post date.', 'old-post-notice' ), '<code>[date]</code>' ),
 					'type'			=> 'textarea',
 				),
 				array(
@@ -80,7 +114,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				array(
 					'id'			=> 'position',
 					'label'			=> esc_html__( 'Position', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Where the notice will appear on the post.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Choose where the notice will appear in the post.', 'old-post-notice' ),
 					'type'			=> 'select',
 					'options'		=> array(
 						'before'	=> esc_html__( 'Before the content', 'old-post-notice' ),
@@ -91,7 +125,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'id'			=> 'styling',
 					'label'			=> esc_html__( 'Styling', 'old-post-notice' ),
 					// translators: %s: class name
-					'description'	=> sprintf( esc_html__( 'The default option adds some basic styling and uses the background/text colors set below. Use the none option if you wish to style the notice yourself with CSS by targeting the %s class.', 'old-post-notice' ), '<code>old-post-notice</code>' ),
+					'description'	=> sprintf( esc_html__( 'Choose the styling type. The default option adds some basic styling and uses the background/text colors set below. Use the none option if you wish to style the notice yourself with CSS by targeting the %s class.', 'old-post-notice' ), '<code>old-post-notice</code>' ),
 					'type'			=> 'select',
 					'options'		=> array(
 						'default'	=> esc_html__( 'Default', 'old-post-notice' ),
@@ -101,16 +135,20 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				array(
 					'id'			=> 'color_background',
 					'label'			=> esc_html__( 'Background color', 'old-post-notice' ),
-					// translators: %s: date placeholder
-					'description'	=> sprintf( esc_html__( 'The notice which will be displayed on old posts. Use %s to include the date.', 'old-post-notice' ), '<code>[date]</code>' ),
+					'description'	=> esc_html__( 'Background color of the notice, used when the default styling option above is used.', 'old-post-notice' ),
 					'type'			=> 'color',
 				),
 				array(
 					'id'			=> 'color_text',
 					'label'			=> esc_html__( 'Text color', 'old-post-notice' ),
-					// translators: %s: date placeholder
-					'description'	=> sprintf( esc_html__( 'The notice which will be displayed on old posts. Use %s to include the date.', 'old-post-notice' ), '<code>[date]</code>' ),
+					'description'	=> esc_html__( 'Text color of the notice, used when the default styling option above is used.', 'old-post-notice' ),
 					'type'			=> 'color',
+				),
+				array(
+					'id'			=> 'nag',
+					'label'			=> esc_html__( 'Nag', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag notice.', 'old-post-notice' ),
+					'type'			=> 'checkbox',
 				),
 			);
 

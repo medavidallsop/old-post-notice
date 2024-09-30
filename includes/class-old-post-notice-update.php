@@ -31,6 +31,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 						'styling'			=> 'default',
 						'color_background'	=> '#0000ff',
 						'color_text'		=> '#ffffff',
+						'nag'				=> '1',
 					);
 
 					update_option( 'old_post_notice_settings', $default_settings );

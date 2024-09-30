@@ -3,8 +3,6 @@ Contributors: medavidallsop
 Tags: old, post, notice, old post, old post notice
 Stable tag: 1.0.0
 Tested up to: 6.6.2
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Display a notice on old posts.
 
