@@ -43,7 +43,7 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 Yes. Ensure the styling setting is set to default, then use the color settings to choose your colors.
 
-= Can I use my own custom CSS to style the notice? =
+= Can I use my own custom CSS? =
 
 Yes. It is best to set the styling setting to none, then use the `.old-post-notice` class to apply your custom CSS rules.
 
