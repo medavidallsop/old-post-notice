@@ -64,6 +64,6 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 1.0.0 - xxxx-xx-xx =
+= 1.0.0 - 2024-10-01 =
 
 * New: Initial release
