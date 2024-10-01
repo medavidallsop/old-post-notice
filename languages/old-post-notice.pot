@@ -1,0 +1,178 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Old Post Notice\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-01 10:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.11; wp-6.6.2\n"
+"X-Domain: old-post-notice"
+
+#: includes/class-old-post-notice-settings.php:121
+msgid "After the content"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:137
+msgid "Background color"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:138
+msgid ""
+"Background color of the notice, used when the default styling option above "
+"is used."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:120
+msgid "Before the content"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:107
+msgid ""
+"Choose if the notice should be displayed based on the published or modified "
+"date of the post."
+msgstr ""
+
+#. %s: class name
+#: includes/class-old-post-notice-settings.php:128
+#, php-format
+msgid ""
+"Choose the styling type. The default option adds some basic styling and uses "
+"the background/text colors set below. Use the none option if you wish to "
+"style the notice with CSS by targeting the %s class."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:117
+msgid "Choose where the notice will appear in the post."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:106
+msgid "Date"
+msgstr ""
+
+#. Author of the plugin
+msgid "David Allsop"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:100
+msgid "Days"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:131
+msgid "Default"
+msgstr ""
+
+#. Description of the plugin
+msgid "Display a notice on old posts."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:87
+msgid "Enable"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:88
+msgid "Enable or disable the old post notice."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:150
+msgid "Enable or disable the sponsor/review nag notice."
+msgstr ""
+
+#. %s: date placeholder
+#: includes/class-old-post-notice-settings.php:95
+#, php-format
+msgid ""
+"Enter the notice you want to be displayed on old posts. Use %s to include "
+"the post date."
+msgstr ""
+
+#. %1$s: sponsor link, %2$s: review link
+#: includes/class-old-post-notice-settings.php:53
+#, php-format
+msgid ""
+"Hello! I'm David, I develop this plugin in my spare time. If it has helped "
+"you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me "
+"commit more time to development and keeps it free. You can disable this nag "
+"below."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:101
+msgid "How many days old a post needs to be for the notice to be displayed."
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://davidallsop.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/old-post-notice/"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:53
+msgid "leaving a review"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:111
+msgid "Modified date"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:149
+msgid "Nag"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:132
+msgid "None"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:93
+msgid "Notice"
+msgstr ""
+
+#. Name of the plugin
+#: includes/class-old-post-notice-settings.php:26
+msgid "Old Post Notice"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:25
+msgid "Old Post Notice Settings"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:116
+msgid "Position"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:110
+msgid "Published date"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:179
+msgid "Settings"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:53
+msgid "sponsoring me on GitHub"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:126
+msgid "Styling"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:143
+msgid "Text color"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:144
+msgid ""
+"Text color of the notice, used when the default styling option above is used."
+msgstr ""
+
+#: includes/class-old-post-notice-update.php:27
+msgid "This post is old, the information may be outdated."
+msgstr ""
