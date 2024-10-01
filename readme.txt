@@ -1,5 +1,6 @@
 === Old Post Notice ===
 Contributors: medavidallsop
+Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
 Stable tag: 1.0.0
 Tested up to: 6.6.2
@@ -65,6 +66,10 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * WordPress 5.0.0
 
 == Changelog ==
+
+= x.x.x - xxxx-xx-xx =
+
+* Add: Donate link to readme.txt
 
 = 1.0.0 - 2024-10-01 =
 

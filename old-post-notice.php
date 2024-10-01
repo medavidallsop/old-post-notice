@@ -6,7 +6,6 @@
  * Description: Display a notice on old posts.
  * Author: David Allsop
  * Author URI: https://davidallsop.com
- * Donate link: https://github.com/sponsors/medavidallsop
  * Version: 1.0.0
  * Requires at least: 5.0.0
  * Requires PHP: 7.0.0
