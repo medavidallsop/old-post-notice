@@ -213,7 +213,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 				?>
 
-				<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>">
+				<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>" min="1" step="1">
 
 				<?php
 
