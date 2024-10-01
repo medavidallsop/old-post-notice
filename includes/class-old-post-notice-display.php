@@ -51,7 +51,7 @@ if ( !class_exists( 'Old_Post_Notice_Display' ) ) {
 
 							}
 
-							$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . wp_kses_post( $notice ) . '</div>';
+							$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . wp_kses_post( wpautop( $notice ) ) . '</div>';
 
 							if ( 'before' == $position ) {
 
