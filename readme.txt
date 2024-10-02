@@ -48,7 +48,7 @@ Yes. Ensure the styling setting is set to default, then use the color settings t
 
 = Can I use my own custom CSS? =
 
-Yes. It is best to set the styling setting to none, then use the `.old-post-notice` class to apply your custom CSS rules.
+Yes. It is best to set the styling setting to none, then use the `old-post-notice` class to apply your custom CSS rules.
 
 == Installation ==
 
@@ -69,7 +69,8 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 = x.x.x - xxxx-xx-xx =
 
-* Add: Donate link to readme.txt
+* Add: Donate link in readme.txt
+* Update: FAQs in readme.txt
 
 = 1.0.0 - 2024-10-01 =
 
