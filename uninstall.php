@@ -1,7 +1,7 @@
 <?php
 
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	die;
+	exit;
 }
 
 delete_option( 'old_post_notice_settings' );
