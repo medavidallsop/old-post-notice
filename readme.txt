@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -67,7 +67,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= x.x.x - xxxx-xx-xx =
+= 1.0.1 - 2024-10-02 =
 
 * Add: Donate link in readme.txt
 * Update: FAQs in readme.txt
