@@ -71,6 +71,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 * Add: Donate link in readme.txt
 * Update: FAQs in readme.txt
+* Update: Conditions in uninstall.php
 
 = 1.0.0 - 2024-10-01 =
 
