@@ -70,8 +70,8 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 = 1.0.1 - 2024-10-02 =
 
 * Add: Donate link in readme.txt
-* Update: FAQs in readme.txt
 * Update: Conditions in uninstall.php
+* Update: FAQs in readme.txt
 
 = 1.0.0 - 2024-10-01 =
 
