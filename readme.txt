@@ -38,9 +38,9 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 == Screenshots ==
 
-1. Notice displayed on an old post
-2. Settings to configure the notice
-2. Dashboard widget displaying an overview of all posts with the old post notice
+1. Notice
+2. Settings
+2. Dashboard widget
 
 == Frequently Asked Questions ==
 
