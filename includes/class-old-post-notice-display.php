@@ -23,7 +23,7 @@ if ( !class_exists( 'Old_Post_Notice_Display' ) ) {
 				if ( 'post' == get_post_type() ) {
 
 					$settings = get_option( 'old_post_notice_settings' );
-					$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' ); // This uses isset as it is a checkbox, and if not checked in settings the array entry will not exist, so we need to check if set or get PHP notices
+					$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 					$notice = $settings['notice'];
 					$days = $settings['days'];
 					$date = $settings['date'];

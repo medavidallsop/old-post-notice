@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,6 +26,7 @@ It is particularly beneficial for blogs with numerous older posts, as it allows 
 - Default styling included
 - Color options for the background/text color
 - Styling can be disabled to allow styling via custom CSS
+- Dashboard widget displaying an overview of all posts that are displaying the old post notice
 
 = Usage =
 
@@ -39,8 +40,13 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 1. Notice displayed on an old post
 2. Settings to configure the notice
+2. Dashboard widget displaying an overview of all posts with the old post notice
 
 == Frequently Asked Questions ==
+
+= Can I see a list of all posts that are displaying the old post notice? =
+
+Yes. Ensure the dashboard widget setting is enabled, you'll then find the widget in the WordPress dashboard.
 
 = Can I set the colors? =
 
@@ -66,6 +72,11 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * WordPress 5.0.0
 
 == Changelog ==
+
+= 1.1.0 - 2024-10-04 =
+
+* Add: Dashboard widget that displays an overview of all posts that are displaying the old post notice, disabled by default
+* Update: Public CSS for old post notice is now only enqueued if the old post notice setting is enabled and the styling setting is not none
 
 = 1.0.1 - 2024-10-02 =
 

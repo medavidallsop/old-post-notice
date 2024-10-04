@@ -6,7 +6,7 @@
  * Description: Display a notice on old posts.
  * Author: David Allsop
  * Author URI: https://davidallsop.com
- * Version: 1.0.1
+ * Version: 1.1.0
  * Requires at least: 5.0.0
  * Requires PHP: 7.0.0
  * Domain path: /languages
@@ -22,7 +22,7 @@ if ( !defined( 'ABSPATH' ) ) {
 if ( !class_exists( 'Old_Post_Notice' ) ) {
 
 	define( 'OLD_POST_NOTICE_BASENAME', plugin_basename( __FILE__ ) );
-	define( 'OLD_POST_NOTICE_VERSION', '1.0.1' );
+	define( 'OLD_POST_NOTICE_VERSION', '1.1.0' );
 
 	class Old_Post_Notice {
 
@@ -33,12 +33,14 @@ if ( !class_exists( 'Old_Post_Notice' ) ) {
 			require_once __DIR__ . '/includes/class-old-post-notice-settings.php';
 			require_once __DIR__ . '/includes/class-old-post-notice-translation.php';
 			require_once __DIR__ . '/includes/class-old-post-notice-update.php';
+			require_once __DIR__ . '/includes/class-old-post-notice-widgets.php';
 
 			new Old_Post_Notice_Display();
 			new Old_Post_Notice_Enqueues();
 			new Old_Post_Notice_Settings();
 			new Old_Post_Notice_Translation();
 			new Old_Post_Notice_Update();
+			new Old_Post_Notice_Widgets();
 
 		}
 

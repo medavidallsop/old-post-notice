@@ -19,7 +19,17 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 			global $pagenow;
 
-			// Enqueue assets if it is the settings page
+			// Enqueue global admin assets
+
+			wp_enqueue_style(
+				'old-post-notice-admin',
+				plugins_url( 'assets/css/admin.css', __DIR__ ),
+				array(),
+				OLD_POST_NOTICE_VERSION,
+				'all'
+			);
+
+			// Enqueue settings admin assets
 
 			if ( 'options-general.php' == $pagenow ) {
 
@@ -42,14 +52,6 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 						wp_enqueue_style( 'wp-color-picker' );
 
-						wp_enqueue_style(
-							'old-post-notice-admin',
-							plugins_url( 'assets/css/admin.css', __DIR__ ),
-							array(),
-							OLD_POST_NOTICE_VERSION,
-							'all'
-						);
-
 					}
 
 				}
@@ -60,13 +62,15 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 		public function assets_public() {
 
-			// Enqueue assets on frontend if it is a post and the styling setting is not none
+			// Enqueue public assets if it is a post, old post notice is enabled, and the styling setting is not none
 
 			if ( is_single() ) {
 
 				$settings = get_option( 'old_post_notice_settings' );
+				$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
+				$styling = $settings['styling'];
 
-				if ( 'none' !== $settings['styling'] ) {
+				if ( '1' == $enable && 'none' !== $styling ) {
 
 					wp_enqueue_style(
 						'old-post-notice-public',

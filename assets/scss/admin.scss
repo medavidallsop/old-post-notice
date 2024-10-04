@@ -4,3 +4,18 @@
 		width: 500px;
 	}
 }
+
+#old-post-notice-widget-dashboard {
+	.old-post-notice-widget-dashboard-table-scroller {
+		height: 200px;
+		overflow: scroll;
+		table {
+			border: 0;
+			thead {
+				background-color: #ffffff;
+				position: sticky;
+				top: 0;
+			}
+		}
+	}
+}

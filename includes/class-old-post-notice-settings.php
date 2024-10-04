@@ -145,6 +145,12 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'type'			=> 'color',
 				),
 				array(
+					'id'			=> 'widget_dashboard',
+					'label'			=> esc_html__( 'Dashboard widget', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable a dashboard widget that displays an overview of all posts that are displaying the old post notice.', 'old-post-notice' ),
+					'type'			=> 'checkbox',
+				),
+				array(
 					'id'			=> 'nag',
 					'label'			=> esc_html__( 'Nag', 'old-post-notice' ),
 					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag notice.', 'old-post-notice' ),

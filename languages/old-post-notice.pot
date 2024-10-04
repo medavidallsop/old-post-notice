@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Old Post Notice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-02 11:22+0000\n"
+"POT-Creation-Date: 2024-10-04 10:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -18,6 +18,22 @@ msgstr ""
 
 #: includes/class-old-post-notice-settings.php:121
 msgid "After the content"
+msgstr ""
+
+#. %s: days
+#: includes/class-old-post-notice-widgets.php:78
+#, php-format
+msgid ""
+"An old post notice is being displayed on these posts as the modified date is "
+"more than %s days ago"
+msgstr ""
+
+#. %s: days
+#: includes/class-old-post-notice-widgets.php:73
+#, php-format
+msgid ""
+"An old post notice is being displayed on these posts as the published date "
+"is more than %s days ago."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:137
@@ -53,6 +69,10 @@ msgstr ""
 msgid "Choose where the notice will appear in the post."
 msgstr ""
 
+#: includes/class-old-post-notice-settings.php:149
+msgid "Dashboard widget"
+msgstr ""
+
 #: includes/class-old-post-notice-settings.php:106
 msgid "Date"
 msgstr ""
@@ -77,11 +97,17 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
+#: includes/class-old-post-notice-settings.php:150
+msgid ""
+"Enable or disable a dashboard widget that displays an overview of all posts "
+"that are displaying the old post notice."
+msgstr ""
+
 #: includes/class-old-post-notice-settings.php:88
 msgid "Enable or disable the old post notice."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:150
+#: includes/class-old-post-notice-settings.php:156
 msgid "Enable or disable the sponsor/review nag notice."
 msgstr ""
 
@@ -119,12 +145,20 @@ msgstr ""
 msgid "leaving a review"
 msgstr ""
 
+#: includes/class-old-post-notice-widgets.php:88
+msgid "Modified"
+msgstr ""
+
 #: includes/class-old-post-notice-settings.php:111
 msgid "Modified date"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:149
+#: includes/class-old-post-notice-settings.php:155
 msgid "Nag"
+msgstr ""
+
+#: includes/class-old-post-notice-widgets.php:109
+msgid "No posts are displaying an old post notice."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:132
@@ -136,6 +170,7 @@ msgid "Notice"
 msgstr ""
 
 #. Name of the plugin
+#: includes/class-old-post-notice-widgets.php:27
 #: includes/class-old-post-notice-settings.php:26
 msgid "Old Post Notice"
 msgstr ""
@@ -148,11 +183,20 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
+#: includes/class-old-post-notice-widgets.php:86
+msgid "Post"
+msgstr ""
+
+#: includes/class-old-post-notice-widgets.php:87
+msgid "Published"
+msgstr ""
+
 #: includes/class-old-post-notice-settings.php:110
 msgid "Published date"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:179
+#: includes/class-old-post-notice-widgets.php:113
+#: includes/class-old-post-notice-settings.php:185
 msgid "Settings"
 msgstr ""
 
