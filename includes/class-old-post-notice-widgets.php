@@ -58,7 +58,7 @@ if ( !class_exists( 'Old_Post_Notice_Widgets' ) ) {
 
 					$posts = $wpdb->get_results(
 						$wpdb->prepare(
-							"SELECT `ID` FROM `{$wpdb->prefix}posts` WHERE`post_status` = 'publish' AND `post_type` = 'post' AND `post_date` < %s ORDER BY `post_modified_gmt` ASC;",
+							"SELECT `ID` FROM `{$wpdb->prefix}posts` WHERE`post_status` = 'publish' AND `post_type` = 'post' AND `post_modified` < %s ORDER BY `post_modified_gmt` ASC;",
 							$date_compare
 						)
 					);
