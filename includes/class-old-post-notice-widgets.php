@@ -20,7 +20,7 @@ if ( !class_exists( 'Old_Post_Notice_Widgets' ) ) {
 			$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 			$widget_dashboard = ( isset( $settings['widget_dashboard'] ) ? $settings['widget_dashboard'] : '0' );
 
-			if ( '1' == $enable && '1' == $widget_dashboard ) {
+			if ( '1' == $enable && '1' == $widget_dashboard && current_user_can( 'edit_posts' ) ) {
 
 				wp_add_dashboard_widget(
 					'old-post-notice-widget-dashboard',

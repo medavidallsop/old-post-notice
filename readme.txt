@@ -73,6 +73,9 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
+= x.x.x - xxxx-xx-xx =
+* Update: Dashboard widget visibility to users with edit_posts capability
+
 = 1.1.0 - 2024-10-04 =
 
 * Add: Dashboard widget that displays an overview of all posts that are displaying the old post notice, disabled by default
