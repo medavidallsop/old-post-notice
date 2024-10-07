@@ -16,7 +16,7 @@ if ( !class_exists( 'Old_Post_Notice_Nag' ) ) {
 
 		public function display() {
 
-			// Shows notices on the settings page
+			// Shows nag on specific pages
 
 			global $pagenow;
 

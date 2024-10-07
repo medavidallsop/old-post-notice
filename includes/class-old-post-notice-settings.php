@@ -18,7 +18,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 		public function page() {
 
-			// Add the settings page
+			// Add the page
 
 			add_options_page(
 				esc_html__( 'Old Post Notice Settings', 'old-post-notice' ),
@@ -251,7 +251,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 		public function page_render() {
 
-			// Renders the settings page
+			// Renders the page
 
 			?>
 

@@ -16,6 +16,8 @@ if ( !class_exists( 'Old_Post_Notice_Widgets' ) ) {
 
 		public function add() {
 
+			// Adds the dashboard widget if old post notice is enabled, the dashboard widget is enabled and if the user has the edit_posts capability
+
 			$settings = get_option( 'old_post_notice_settings' );
 			$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 			$dashboard_widget = ( isset( $settings['dashboard_widget'] ) ? $settings['dashboard_widget'] : '0' );

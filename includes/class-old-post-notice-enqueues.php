@@ -17,9 +17,9 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 		public function assets_admin() {
 
-			global $pagenow;
-
 			// Enqueue global admin assets
+
+			global $pagenow;
 
 			wp_enqueue_script( 'jquery' );
 

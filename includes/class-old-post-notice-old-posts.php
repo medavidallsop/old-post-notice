@@ -17,7 +17,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 		public function page() {
 
-			// Add the posts page
+			// Adds the page if old post notice is enabled, the dashboard page is enabled and if the user has the edit_posts capability
 
 			$settings = get_option( 'old_post_notice_settings' );
 			$enable = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
@@ -39,7 +39,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 		public function page_render() {
 
-			// Renders the old posts page
+			// Renders the page
 
 			?>
 
@@ -54,7 +54,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 		public static function table( $type = 'page' ) {
 
-			// Renders the initial table ready for the old posts to be added to via AJAX
+			// Renders the initial old posts table ready for the old posts to be included via AJAX
 
 			$settings = get_option( 'old_post_notice_settings' );
 			$days = $settings['days'];
@@ -104,11 +104,11 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 				if ( '1' == $dashboard_page ) {
 
-					echo '<p><a href="' . esc_url( get_admin_url() . 'edit.php?page=old-post-notice-old-posts' ) . '">' . esc_html__( 'View all old posts' ) . '</a></p>';
+					echo '<p><a href="' . esc_url( get_admin_url() . 'edit.php?page=old-post-notice-old-posts' ) . '">' . esc_html__( 'View all old posts', 'old-post-notice' ) . '</a></p>';
 
 				} else {
 
-					echo '<p><a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '">' . esc_html__( 'Enable the dashboard page to view more old posts' ) . '</a></p>';
+					echo '<p><a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '">' . esc_html__( 'Enable the dashboard page to view more old posts', 'old-post-notice' ) . '</a></p>';
 
 				}
 

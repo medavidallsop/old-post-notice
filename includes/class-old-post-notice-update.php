@@ -22,7 +22,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 
 				if ( version_compare( $version, '1.0.0', '<' ) ) {
 
-					$default_settings = array(
+					$settings = array(
 						// 'enable' not included as the default is disabled and if saving the settings via the page 'enable' is not set and therefore not included in the array
 						'notice'			=> esc_html__( 'This post is old, the information may be outdated.', 'old-post-notice' ),
 						'days'				=> '365',
@@ -34,7 +34,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 						'nag'				=> '1',
 					);
 
-					update_option( 'old_post_notice_settings', $default_settings );
+					update_option( 'old_post_notice_settings', $settings );
 
 				}
 
@@ -44,7 +44,7 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 
 					if ( isset( $settings['widget_dashboard'] ) ) {
 
-						// This version introduced a dashboard_page setting, so for consistency in the setting naming the old widget_dashboard is renamed to dashboard_widget
+						// This version introduced a dashboard_page setting, so for naming consistency the old widget_dashboard setting is renamed to dashboard_widget
 
 						$settings['dashboard_widget'] = $settings['widget_dashboard'];
 						unset( $settings['widget_dashboard'] );
