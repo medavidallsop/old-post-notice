@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Old Post Notice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-04 10:38+0000\n"
+"POT-Creation-Date: 2024-10-07 12:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Loco-Version: 2.6.11; wp-6.6.2\n"
 "X-Domain: old-post-notice"
 
-#: includes/class-old-post-notice-settings.php:121
+#: includes/class-old-post-notice-settings.php:87
 msgid "After the content"
 msgstr ""
 
 #. %s: days
-#: includes/class-old-post-notice-widgets.php:78
+#: includes/class-old-post-notice-old-posts.php:72
 #, php-format
 msgid ""
 "An old post notice is being displayed on these posts as the modified date is "
@@ -29,35 +29,35 @@ msgid ""
 msgstr ""
 
 #. %s: days
-#: includes/class-old-post-notice-widgets.php:73
+#: includes/class-old-post-notice-old-posts.php:67
 #, php-format
 msgid ""
 "An old post notice is being displayed on these posts as the published date "
 "is more than %s days ago."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:137
+#: includes/class-old-post-notice-settings.php:103
 msgid "Background color"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:138
+#: includes/class-old-post-notice-settings.php:104
 msgid ""
 "Background color of the notice, used when the default styling option above "
 "is used."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:120
+#: includes/class-old-post-notice-settings.php:86
 msgid "Before the content"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:107
+#: includes/class-old-post-notice-settings.php:73
 msgid ""
 "Choose if the notice should be displayed based on the published or modified "
 "date of the post."
 msgstr ""
 
 #. %s: class name
-#: includes/class-old-post-notice-settings.php:128
+#: includes/class-old-post-notice-settings.php:94
 #, php-format
 msgid ""
 "Choose the styling type. The default option adds some basic styling and uses "
@@ -65,15 +65,19 @@ msgid ""
 "style the notice with CSS by targeting the %s class."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:117
+#: includes/class-old-post-notice-settings.php:83
 msgid "Choose where the notice will appear in the post."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:149
+#: includes/class-old-post-notice-settings.php:115
+msgid "Dashboard page"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:121
 msgid "Dashboard widget"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:106
+#: includes/class-old-post-notice-settings.php:72
 msgid "Date"
 msgstr ""
 
@@ -81,11 +85,11 @@ msgstr ""
 msgid "David Allsop"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:100
+#: includes/class-old-post-notice-settings.php:66
 msgid "Days"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:131
+#: includes/class-old-post-notice-settings.php:97
 msgid "Default"
 msgstr ""
 
@@ -93,26 +97,36 @@ msgstr ""
 msgid "Display a notice on old posts."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:87
+#: includes/class-old-post-notice-settings.php:53
 msgid "Enable"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:150
+#: includes/class-old-post-notice-settings.php:116
 msgid ""
-"Enable or disable a dashboard widget that displays an overview of all posts "
-"that are displaying the old post notice."
+"Enable or disable a dashboard page under the posts menu that displays all "
+"posts that are displaying the old post notice."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:88
+#: includes/class-old-post-notice-settings.php:122
+msgid ""
+"Enable or disable a dashboard widget that displays a selection of posts that "
+"are displaying the old post notice."
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:54
 msgid "Enable or disable the old post notice."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:156
+#: includes/class-old-post-notice-settings.php:128
 msgid "Enable or disable the sponsor/review nag notice."
 msgstr ""
 
+#: includes/class-old-post-notice-old-posts.php:111
+msgid "Enable the dashboard page to view more old posts"
+msgstr ""
+
 #. %s: date placeholder
-#: includes/class-old-post-notice-settings.php:95
+#: includes/class-old-post-notice-settings.php:61
 #, php-format
 msgid ""
 "Enter the notice you want to be displayed on old posts. Use %s to include "
@@ -120,7 +134,7 @@ msgid ""
 msgstr ""
 
 #. %1$s: sponsor link, %2$s: review link
-#: includes/class-old-post-notice-settings.php:53
+#: includes/class-old-post-notice-nag.php:64
 #, php-format
 msgid ""
 "Hello! I'm David, I develop this plugin in my spare time. If it has helped "
@@ -129,7 +143,7 @@ msgid ""
 "below."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:101
+#: includes/class-old-post-notice-settings.php:67
 msgid "How many days old a post needs to be for the notice to be displayed."
 msgstr ""
 
@@ -141,82 +155,94 @@ msgstr ""
 msgid "https://wordpress.org/plugins/old-post-notice/"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:53
+#: includes/class-old-post-notice-nag.php:64
 msgid "leaving a review"
 msgstr ""
 
-#: includes/class-old-post-notice-widgets.php:88
+#: includes/class-old-post-notice-old-posts.php:96
+msgid "Loading..."
+msgstr ""
+
+#: includes/class-old-post-notice-old-posts.php:91
 msgid "Modified"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:111
+#: includes/class-old-post-notice-settings.php:77
 msgid "Modified date"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:155
+#: includes/class-old-post-notice-settings.php:127
 msgid "Nag"
 msgstr ""
 
-#: includes/class-old-post-notice-widgets.php:109
-msgid "No posts are displaying an old post notice."
+#: assets/js/admin.js:49
+msgid "No old posts."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:132
+#: includes/class-old-post-notice-settings.php:98
 msgid "None"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:93
+#: includes/class-old-post-notice-settings.php:59
 msgid "Notice"
 msgstr ""
 
 #. Name of the plugin
-#: includes/class-old-post-notice-widgets.php:27
-#: includes/class-old-post-notice-settings.php:26
+#: includes/class-old-post-notice-widgets.php:29
+#: includes/class-old-post-notice-settings.php:25
 msgid "Old Post Notice"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:25
+#: includes/class-old-post-notice-settings.php:24
 msgid "Old Post Notice Settings"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:116
+#: includes/class-old-post-notice-old-posts.php:29
+#: includes/class-old-post-notice-old-posts.php:30
+msgid "Old Posts"
+msgstr ""
+
+#: includes/class-old-post-notice-settings.php:82
 msgid "Position"
 msgstr ""
 
-#: includes/class-old-post-notice-widgets.php:86
+#: includes/class-old-post-notice-old-posts.php:89
 msgid "Post"
 msgstr ""
 
-#: includes/class-old-post-notice-widgets.php:87
+#: includes/class-old-post-notice-old-posts.php:90
 msgid "Published"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:110
+#: includes/class-old-post-notice-settings.php:76
 msgid "Published date"
 msgstr ""
 
-#: includes/class-old-post-notice-widgets.php:113
-#: includes/class-old-post-notice-settings.php:185
+#: includes/class-old-post-notice-settings.php:157
 msgid "Settings"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:53
+#: includes/class-old-post-notice-nag.php:64
 msgid "sponsoring me on GitHub"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:126
+#: includes/class-old-post-notice-settings.php:92
 msgid "Styling"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:143
+#: includes/class-old-post-notice-settings.php:109
 msgid "Text color"
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:144
+#: includes/class-old-post-notice-settings.php:110
 msgid ""
 "Text color of the notice, used when the default styling option above is used."
 msgstr ""
 
 #: includes/class-old-post-notice-update.php:27
 msgid "This post is old, the information may be outdated."
+msgstr ""
+
+#: includes/class-old-post-notice-old-posts.php:107
+msgid "View all old posts"
 msgstr ""
