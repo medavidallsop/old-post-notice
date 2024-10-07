@@ -46,14 +46,6 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 				plugin_dir_path( __DIR__ ) . 'languages'
 			);
 
-			wp_enqueue_style(
-				'old-post-notice-admin',
-				plugins_url( 'assets/css/admin.css', __DIR__ ),
-				array(),
-				OLD_POST_NOTICE_VERSION,
-				'all'
-			);
-
 			// Enqueue settings admin assets
 
 			if ( 'options-general.php' == $pagenow ) {
@@ -63,6 +55,14 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 					if ( 'old-post-notice' == $_GET['page'] ) {
 
 						wp_enqueue_style( 'wp-color-picker' );
+
+						wp_enqueue_style(
+							'old-post-notice-admin',
+							plugins_url( 'assets/css/admin.css', __DIR__ ),
+							array(),
+							OLD_POST_NOTICE_VERSION,
+							'all'
+						);
 
 					}
 
