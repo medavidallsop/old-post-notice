@@ -80,7 +80,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * Add: Dashboard page under the posts menu that displays all posts that are displaying the old post notice, disabled by default
 * Update: Dashboard widget now loads a limited amount of data and includes a link to view all via the dashboard page
 * Update: Dashboard widget now loads data via AJAX
-* Update: Dashboard widget visibility to users with edit_posts capability
+* Update: Dashboard widget visibility only to users with edit_posts capability
 
 = 1.1.0 - 2024-10-04 =
 

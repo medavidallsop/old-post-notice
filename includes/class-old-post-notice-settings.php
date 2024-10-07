@@ -189,9 +189,11 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 			} elseif ( 'number' == $field['type'] ) {
 
+				// This includes some specific attributes for the days field, if additonal number fields are used in future will need to set attributes in an array and pass here instead, note that the max attribute set below is done as found in testing if using something like 999999999 it causes the date queries to break when getting posts showing the notice
+
 				?>
 
-				<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>" min="1" step="1">
+				<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>" min="1" step="1" max="36525">
 
 				<?php
 
