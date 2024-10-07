@@ -41,8 +41,8 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 1. Notice
 2. Settings
-3. Dashboard page
-4. Dashboard widget
+3. Page
+4. Widget
 
 == Frequently Asked Questions ==
 
