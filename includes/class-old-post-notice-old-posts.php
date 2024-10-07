@@ -136,7 +136,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 						$posts = array();
 						$date_compare = gmdate( 'Y-m-d H:i:s', strtotime( '-' . $days . ' days' ) );
 						$type = sanitize_text_field( wp_unslash( $_POST['type'] ) );
-						$widget_limit = 20;
+						$widget_limit = 10;
 
 						if ( 'published' == $date ) {
 
