@@ -120,7 +120,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 			// Returns an array of old posts to be inserted into the old posts table
 
-			if ( isset( $_POST['nonce'] ) ) {
+			if ( isset( $_POST['nonce'] ) && isset( $_POST['type'] ) ) {
 
 				if ( wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'old_post_notice_admin' ) ) {
 
@@ -135,7 +135,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 						$posts = array();
 						$date_compare = gmdate( 'Y-m-d H:i:s', strtotime( '-' . $days . ' days' ) );
-						$type = $_POST['type'];
+						$type = sanitize_text_field( wp_unslash( $_POST['type'] ) );
 						$widget_limit = 20;
 
 						if ( 'published' == $date ) {
