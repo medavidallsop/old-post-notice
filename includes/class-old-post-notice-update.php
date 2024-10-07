@@ -38,6 +38,22 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 
 				}
 
+				if ( version_compare( $version, '1.2.0', '<' ) ) {
+
+					$settings = get_option( 'old_post_notice_settings' );
+
+					if ( isset( $settings['widget_dashboard'] ) ) {
+
+						// This version introduced a dashboard_page setting, so for consistency in the setting naming the old widget_dashboard is renamed to dashboard_widget
+
+						$settings['dashboard_widget'] = $settings['widget_dashboard'];
+						unset( $settings['widget_dashboard'] );
+						update_option( 'old_post_notice_settings', $settings );
+
+					}
+
+				}
+
 				update_option( 'old_post_notice_version', OLD_POST_NOTICE_VERSION );
 
 			}

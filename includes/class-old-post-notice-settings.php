@@ -11,7 +11,6 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 		public function __construct() {
 
 			add_action( 'admin_menu', array( $this, 'page' ) );
-			add_action( 'admin_notices', array( $this, 'notices' ) );
 			add_action( 'admin_init', array( $this, 'register' ) );
 			add_filter( 'plugin_action_links_' . OLD_POST_NOTICE_BASENAME, array( $this, 'plugins_link' ) );
 
@@ -28,39 +27,6 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				'old-post-notice',
 				array( $this, 'page_render' ),
 			);
-
-		}
-
-		public function notices() {
-
-			// Shows notices on the settings page
-
-			global $pagenow;
-
-			if ( 'options-general.php' == $pagenow ) {
-
-				if ( isset( $_GET['page'] ) ) {
-
-					if ( 'old-post-notice' == sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) {
-
-						$settings = get_option( 'old_post_notice_settings' );
-
-						if ( isset( $settings['nag'] ) ) {
-
-							if ( '1' == $settings['nag'] ) {
-
-								// translators: %1$s: sponsor link, %2$s: review link
-								echo '<div class="notice notice-success"><p>' . sprintf( esc_html__( 'Hello! I\'m David, I develop this plugin in my spare time. If it has helped you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me commit more time to development and keeps it free. You can disable this nag below.', 'old-post-notice' ), '<a href="https://github.com/sponsors/medavidallsop" target="_blank">' . esc_html__( 'sponsoring me on GitHub', 'old-post-notice' ) . '</a>', '<a href="https://wordpress.org/support/plugin/old-post-notice/reviews/" target="_blank">' . esc_html__( 'leaving a review', 'old-post-notice' ) . '</a>' ) . '</p></div>';
-
-							}
-
-						}
-
-					}
-
-				}
-
-			}
 
 		}
 
@@ -145,9 +111,15 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'type'			=> 'color',
 				),
 				array(
-					'id'			=> 'widget_dashboard',
+					'id'			=> 'dashboard_page',
+					'label'			=> esc_html__( 'Dashboard page', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable a dashboard page under the posts menu that displays all posts that are displaying the old post notice.', 'old-post-notice' ),
+					'type'			=> 'checkbox',
+				),
+				array(
+					'id'			=> 'dashboard_widget',
 					'label'			=> esc_html__( 'Dashboard widget', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Enable or disable a dashboard widget that displays an overview of all posts that are displaying the old post notice.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable a dashboard widget that displays a selection of posts that are displaying the old post notice.', 'old-post-notice' ),
 					'type'			=> 'checkbox',
 				),
 				array(
@@ -279,9 +251,10 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 		public function page_render() {
 
-			// Display the settings form
+			// Renders the settings page
 
 			?>
+
 			<div id="old-post-notice-settings" class="wrap">
 				<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 				<form action="options.php" method="post">
@@ -292,6 +265,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					?>
 				</form>
 			</div>
+
 			<?php
 
 		}

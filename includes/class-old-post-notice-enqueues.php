@@ -21,6 +21,31 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 
 			// Enqueue global admin assets
 
+			wp_enqueue_script( 'jquery' );
+
+			wp_enqueue_script(
+				'old-post-notice-admin',
+				plugins_url( 'assets/js/admin.min.js', __DIR__ ),
+				array(
+					'jquery',
+					'wp-color-picker',
+					'wp-i18n',
+				),
+				OLD_POST_NOTICE_VERSION,
+				true
+			);
+
+			wp_localize_script( 'old-post-notice-admin', 'oldPostNotice', array(
+				'ajaxUrl'	=> admin_url( 'admin-ajax.php' ),
+				'nonce'		=> wp_create_nonce( 'old_post_notice_admin' ),
+			));
+
+			wp_set_script_translations(
+				'old-post-notice-admin',
+				'old-post-notice',
+				plugin_dir_path( __DIR__ ) . 'languages'
+			);
+
 			wp_enqueue_style(
 				'old-post-notice-admin',
 				plugins_url( 'assets/css/admin.css', __DIR__ ),
@@ -36,19 +61,6 @@ if ( !class_exists( 'Old_Post_Notice_Enqueues' ) ) {
 				if ( isset( $_GET['page'] ) ) {
 
 					if ( 'old-post-notice' == $_GET['page'] ) {
-
-						wp_enqueue_script( 'jquery' );
-
-						wp_enqueue_script(
-							'old-post-notice-admin',
-							plugins_url( 'assets/js/admin.min.js', __DIR__ ),
-							array(
-								'jquery',
-								'wp-color-picker',
-							),
-							OLD_POST_NOTICE_VERSION,
-							true
-						);
 
 						wp_enqueue_style( 'wp-color-picker' );
 

@@ -1,0 +1,72 @@
+<?php
+
+if ( !defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+if ( !class_exists( 'Old_Post_Notice_Nag' ) ) {
+
+	class Old_Post_Notice_Nag {
+
+		public function __construct() {
+
+			add_action( 'admin_notices', array( $this, 'display' ) );
+
+		}
+
+		public function display() {
+
+			// Shows notices on the settings page
+
+			global $pagenow;
+
+			$display_nag = false;
+
+			$settings = get_option( 'old_post_notice_settings' );
+
+			if ( isset( $settings['nag'] ) ) {
+
+				if ( '1' == $settings['nag'] ) {
+
+					if ( 'edit.php' == $pagenow ) {
+
+						if ( isset( $_GET['page'] ) ) {
+
+							if ( 'old-post-notice-old-posts' == sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) {
+
+								$display_nag = true; // Display the nag if enabled and it is the old posts page
+
+							}
+
+						}
+
+					} elseif ( 'options-general.php' == $pagenow ) {
+
+						if ( isset( $_GET['page'] ) ) {
+
+							if ( 'old-post-notice' == sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) {
+
+								$display_nag = true; // Display the nag if enabled and it is the settings page
+
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			if ( true == $display_nag ) {
+
+				// translators: %1$s: sponsor link, %2$s: review link
+				echo '<div class="notice notice-success"><p>' . sprintf( esc_html__( 'Hello! I\'m David, I develop this plugin in my spare time. If it has helped you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me commit more time to development and keeps it free. You can disable this nag below.', 'old-post-notice' ), '<a href="https://github.com/sponsors/medavidallsop" target="_blank">' . esc_html__( 'sponsoring me on GitHub', 'old-post-notice' ) . '</a>', '<a href="https://wordpress.org/support/plugin/old-post-notice/reviews/" target="_blank">' . esc_html__( 'leaving a review', 'old-post-notice' ) . '</a>' ) . '</p></div>';
+
+			}
+
+		}
+
+	}
+
+}

@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,7 +26,8 @@ It is particularly beneficial for blogs with numerous older posts, as it allows 
 - Default styling included
 - Color options for the background/text color
 - Styling can be disabled to allow styling via custom CSS
-- Dashboard widget displaying an overview of all posts that are displaying the old post notice
+- Dashboard page under the posts menu that displays all posts that are displaying the old post notice
+- Dashboard widget displaying a selection of posts that are displaying the old post notice
 
 = Usage =
 
@@ -40,13 +41,10 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 1. Notice
 2. Settings
-2. Dashboard widget
+3. Dashboard page
+4. Dashboard widget
 
 == Frequently Asked Questions ==
-
-= Can I see a list of all posts that are displaying the old post notice? =
-
-Yes. Ensure the dashboard widget setting is enabled, you'll then find the widget in the WordPress dashboard.
 
 = Can I set the colors? =
 
@@ -55,6 +53,10 @@ Yes. Ensure the styling setting is set to default, then use the color settings t
 = Can I use my own custom CSS? =
 
 Yes. It is best to set the styling setting to none, then use the `old-post-notice` class to apply your custom CSS rules.
+
+= Can I see a list of all posts that are displaying the old post notice? =
+
+Yes. Ensure the dashboard page setting is enabled, you'll then find the page under the posts menu in the WordPress dashboard.
 
 == Installation ==
 
@@ -73,13 +75,16 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= x.x.x - xxxx-xx-xx =
+= 1.2.0 - 2024-10-07 =
 
+* Add: Dashboard page under the posts menu that displays all posts that are displaying the old post notice, disabled by default
+* Update: Dashboard widget now loads a limited amount of data and includes a link to view all via the dashboard page
+* Update: Dashboard widget now loads data via AJAX
 * Update: Dashboard widget visibility to users with edit_posts capability
 
 = 1.1.0 - 2024-10-04 =
 
-* Add: Dashboard widget that displays an overview of all posts that are displaying the old post notice, disabled by default
+* Add: Dashboard widget displaying a selection of posts that are displaying the old post notice, disabled by default
 * Update: Public CSS for old post notice is now only enqueued if the old post notice setting is enabled and the styling setting is not none
 
 = 1.0.1 - 2024-10-02 =
