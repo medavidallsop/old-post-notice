@@ -25,16 +25,16 @@ if ( !class_exists( 'Old_Post_Notice_Widgets' ) ) {
 			if ( '1' == $enable && '1' == $dashboard_widget && current_user_can( 'edit_posts' ) ) {
 
 				wp_add_dashboard_widget(
-					'old-post-notice-widget-dashboard',
-					__( 'Old Post Notice', 'old-post-notice' ),
-					array( $this, 'widget_dashboard' )
+					'old-post-notice-dashboard-widget',
+					esc_html__( 'Old Posts', 'old-post-notice' ),
+					array( $this, 'dashboard' )
 				);
 
 			}
 
 		}
 
-		public function widget_dashboard() {
+		public function dashboard() {
 
 			Old_Post_Notice_Old_Posts::table( 'widget' );
 

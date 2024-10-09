@@ -26,8 +26,8 @@ It is particularly beneficial for blogs with numerous older posts, as it allows 
 - Default styling included
 - Color options for the background/text color
 - Styling can be disabled to allow styling via custom CSS
-- Dashboard page under the posts menu that displays all posts that are displaying the old post notice
-- Dashboard widget displaying a selection of posts that are displaying the old post notice
+- Dashboard page under the posts menu that lists all posts displaying the old post notice
+- Dashboard widget that lists a selection of posts displaying the old post notice
 
 = Usage =
 
@@ -46,6 +46,10 @@ Help contribute towards the development of this plugin via the [GitHub repositor
 
 == Frequently Asked Questions ==
 
+= Can I see a list of posts displaying the old post notice? =
+
+Yes. Enable the dashboard page and/or widget setting.
+
 = Can I set the colors? =
 
 Yes. Ensure the styling setting is set to default, then use the color settings to choose your colors.
@@ -53,10 +57,6 @@ Yes. Ensure the styling setting is set to default, then use the color settings t
 = Can I use my own custom CSS? =
 
 Yes. It is best to set the styling setting to none, then use the `old-post-notice` class to apply your custom CSS rules.
-
-= Can I see a list of all posts that are displaying the old post notice? =
-
-Yes. Ensure the dashboard page setting is enabled, you'll then find the page under the posts menu in the WordPress dashboard.
 
 == Installation ==
 
@@ -74,6 +74,13 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * WordPress 5.0.0
 
 == Changelog ==
+
+= 1.2.1 - 2024-10-09 =
+
+* Update: Dashboard page configure settings button renamed
+* Update: Dashboard widget title changed
+* Update: Information in readme.txt
+* Update: Nag text
 
 = 1.2.0 - 2024-10-07 =
 

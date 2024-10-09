@@ -75,7 +75,7 @@ if ( !class_exists( 'Old_Post_Notice_Old_Posts' ) ) {
 
 			if ( 'page' == $type ) {
 
-				echo '<p><a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '" class="button button-small">' . esc_html__( 'Configure settings' ) . '</a></p>';
+				echo '<p><a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '" class="button button-small">' . esc_html__( 'Settings' ) . '</a></p>';
 
 			}
 

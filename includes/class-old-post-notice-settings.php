@@ -113,19 +113,19 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				array(
 					'id'			=> 'dashboard_page',
 					'label'			=> esc_html__( 'Dashboard page', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Enable or disable a dashboard page under the posts menu that displays all posts that are displaying the old post notice.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable a dashboard page under the posts menu that lists all posts displaying the old post notice.', 'old-post-notice' ),
 					'type'			=> 'checkbox',
 				),
 				array(
 					'id'			=> 'dashboard_widget',
 					'label'			=> esc_html__( 'Dashboard widget', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Enable or disable a dashboard widget that displays a selection of posts that are displaying the old post notice.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable a dashboard widget that lists a selection of posts displaying the old post notice.', 'old-post-notice' ),
 					'type'			=> 'checkbox',
 				),
 				array(
 					'id'			=> 'nag',
 					'label'			=> esc_html__( 'Nag', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag notice.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag.', 'old-post-notice' ),
 					'type'			=> 'checkbox',
 				),
 			);
