@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
