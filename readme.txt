@@ -77,6 +77,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 = 1.2.1 - 2024-10-09 =
 
+* Add: Days setting max attribute
 * Update: Dashboard page configure settings button renamed
 * Update: Dashboard widget title changed
 * Update: Information in readme.txt
