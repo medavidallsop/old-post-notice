@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Old Post Notice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 13:12+0000\n"
+"POT-Creation-Date: 2024-10-09 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -103,14 +103,14 @@ msgstr ""
 
 #: includes/class-old-post-notice-settings.php:116
 msgid ""
-"Enable or disable a dashboard page under the posts menu that displays all "
-"posts that are displaying the old post notice."
+"Enable or disable a dashboard page under the posts menu that lists all posts "
+"displaying the old post notice."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:122
 msgid ""
-"Enable or disable a dashboard widget that displays a selection of posts that "
-"are displaying the old post notice."
+"Enable or disable a dashboard widget that lists a selection of posts "
+"displaying the old post notice."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:54
@@ -118,7 +118,7 @@ msgid "Enable or disable the old post notice."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:128
-msgid "Enable or disable the sponsor/review nag notice."
+msgid "Enable or disable the sponsor/review nag."
 msgstr ""
 
 #: includes/class-old-post-notice-old-posts.php:111
@@ -133,14 +133,14 @@ msgid ""
 "the post date."
 msgstr ""
 
-#. %1$s: sponsor link, %2$s: review link
+#. %1$s: sponsor link, %2$s: review link, %3$s: settings link
 #: includes/class-old-post-notice-nag.php:64
 #, php-format
 msgid ""
-"Hello! I'm David, I develop this plugin in my spare time. If it has helped "
+"Hello! I'm David. I develop this plugin in my spare time. If it has helped "
 "you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me "
 "commit more time to development and keeps it free. You can disable this nag "
-"below."
+"in %3$s."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:67
@@ -188,7 +188,6 @@ msgid "Notice"
 msgstr ""
 
 #. Name of the plugin
-#: includes/class-old-post-notice-widgets.php:29
 #: includes/class-old-post-notice-settings.php:25
 msgid "Old Post Notice"
 msgstr ""
@@ -197,6 +196,7 @@ msgstr ""
 msgid "Old Post Notice Settings"
 msgstr ""
 
+#: includes/class-old-post-notice-widgets.php:29
 #: includes/class-old-post-notice-old-posts.php:29
 #: includes/class-old-post-notice-old-posts.php:30
 msgid "Old Posts"
@@ -220,6 +220,10 @@ msgstr ""
 
 #: includes/class-old-post-notice-settings.php:157
 msgid "Settings"
+msgstr ""
+
+#: includes/class-old-post-notice-nag.php:64
+msgid "settings"
 msgstr ""
 
 #: includes/class-old-post-notice-nag.php:64
