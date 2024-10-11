@@ -75,6 +75,10 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
+= x.x.x - xxxx-xx-xx =
+
+* Update: Color variables naming consistency to match option names
+
 = 1.2.1 - 2024-10-09 =
 
 * Add: Days setting max attribute
