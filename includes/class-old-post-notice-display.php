@@ -29,8 +29,8 @@ if ( !class_exists( 'Old_Post_Notice_Display' ) ) {
 					$date = $settings['date'];
 					$position = $settings['position'];
 					$styling = $settings['styling'];
-					$background_color = $settings['color_background'];
-					$text_color = $settings['color_text'];
+					$color_background = $settings['color_background'];
+					$color_text = $settings['color_text'];
 
 					if ( '1' == $enable && !empty( $notice ) && !empty( $days ) ) {
 
@@ -42,11 +42,11 @@ if ( !class_exists( 'Old_Post_Notice_Display' ) ) {
 
 							$inline_styles = '';
 
-							if ( 'none' !== $styling && ( !empty( $background_color ) || !empty( $text_color ) ) ) {
+							if ( 'none' !== $styling && ( !empty( $color_background ) || !empty( $color_text ) ) ) {
 
 								$inline_styles .= 'style="';
-								$inline_styles .= ( !empty( $background_color ) ? 'background-color: ' . $background_color . '; ' : '' );
-								$inline_styles .= ( !empty( $text_color ) ? 'color: ' . $text_color . ';' : '' );
+								$inline_styles .= ( !empty( $color_background ) ? 'background-color: ' . $color_background . '; ' : '' );
+								$inline_styles .= ( !empty( $color_text ) ? 'color: ' . $color_text . ';' : '' );
 								$inline_styles .= '"';
 
 							}
