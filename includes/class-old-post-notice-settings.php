@@ -32,9 +32,16 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 
 		public function register() {
 
-			// Registers the old_post_notice_settings option, all fields get saved as a serialized array to this
+			// Registers the old_post_notice_settings option
 
-			register_setting( 'old-post-notice', 'old_post_notice_settings' );
+			register_setting(
+				'old-post-notice',
+				'old_post_notice_settings',
+				array(
+					'sanitize_callback'	=> array( $this, 'sanitize' ),
+					'type'				=> 'array',
+				)
+			);
 
 			// Register a new section
 
@@ -269,6 +276,12 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 			</div>
 
 			<?php
+
+		}
+
+		public function sanitize( $settings ) {
+
+			return map_deep( $settings, 'sanitize_text_field' );
 
 		}
 

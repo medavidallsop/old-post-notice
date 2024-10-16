@@ -45,7 +45,7 @@ if ( !class_exists( 'Old_Post_Notice_Display' ) ) {
 							if ( 'none' !== $styling && ( !empty( $color_background ) || !empty( $color_text ) ) ) {
 
 								$inline_styles .= 'style="';
-								$inline_styles .= ( !empty( $color_background ) ? 'background-color: ' . $color_background . '; ' : '' );
+								$inline_styles .= ( !empty( $color_background ) ? 'background-color: ' . $color_background . ';' : '' );
 								$inline_styles .= ( !empty( $color_text ) ? 'color: ' . $color_text . ';' : '' );
 								$inline_styles .= '"';
 

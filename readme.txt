@@ -78,6 +78,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 = x.x.x - xxxx-xx-xx =
 
 * Update: Color variables naming consistency to match option names
+* Update: register_setting sanitize callback
 
 = 1.2.1 - 2024-10-09 =
 
