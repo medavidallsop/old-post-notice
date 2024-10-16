@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -75,8 +75,9 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= x.x.x - xxxx-xx-xx =
+= 1.3.0 - xxxx-xx-xx =
 
+* Add: Dashboard widget posts setting
 * Update: Color variables naming consistency to match option names
 * Update: register_setting sanitize callback
 
