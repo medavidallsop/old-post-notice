@@ -54,6 +54,14 @@ if ( !class_exists( 'Old_Post_Notice_Update' ) ) {
 
 				}
 
+				if ( version_compare( $version, '1.3.0', '<' ) ) {
+
+					$settings = get_option( 'old_post_notice_settings' );
+					$settings['dashboard_widget_posts'] = '5';
+					update_option( 'old_post_notice_settings', $settings );
+
+				}
+
 				update_option( 'old_post_notice_version', OLD_POST_NOTICE_VERSION );
 
 			}

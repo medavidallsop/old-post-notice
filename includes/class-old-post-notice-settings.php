@@ -130,6 +130,19 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 					'type'			=> 'checkbox',
 				),
 				array(
+					'id'			=> 'dashboard_widget_posts',
+					'label'			=> esc_html__( 'Dashboard widget posts', 'old-post-notice' ),
+					'description'	=> esc_html__( 'How many posts should be listed in the dashboard widget.', 'old-post-notice' ),
+					'type'			=> 'select',
+					'options'		=> array(
+						'5'		=> esc_html__( '5', 'old-post-notice' ),
+						'10'	=> esc_html__( '10', 'old-post-notice' ),
+						'25'	=> esc_html__( '25', 'old-post-notice' ),
+						'50'	=> esc_html__( '50', 'old-post-notice' ),
+						'100'	=> esc_html__( '100', 'old-post-notice' ),
+					),
+				),
+				array(
 					'id'			=> 'nag',
 					'label'			=> esc_html__( 'Nag', 'old-post-notice' ),
 					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag.', 'old-post-notice' ),
