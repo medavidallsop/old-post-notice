@@ -75,7 +75,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 1.3.0 - xxxx-xx-xx =
+= 1.3.0 - 2024-10-16 =
 
 * Add: Dashboard widget posts setting
 * Update: Color variables naming consistency to match option names
