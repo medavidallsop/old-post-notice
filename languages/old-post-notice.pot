@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Old Post Notice\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-16 12:21+0000\n"
+"POT-Creation-Date: 2024-11-04 16:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -137,12 +137,12 @@ msgid ""
 "displaying the old post notice."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:61
-msgid "Enable or disable the old post notice."
+#: includes/class-old-post-notice-settings.php:148
+msgid "Enable or disable the leave review nag notice."
 msgstr ""
 
-#: includes/class-old-post-notice-settings.php:148
-msgid "Enable or disable the sponsor/review nag."
+#: includes/class-old-post-notice-settings.php:61
+msgid "Enable or disable the old post notice."
 msgstr ""
 
 #: includes/class-old-post-notice-old-posts.php:111
@@ -157,14 +157,12 @@ msgid ""
 "the post date."
 msgstr ""
 
-#. %1$s: sponsor link, %2$s: review link, %3$s: settings link
+#. %1$s: review link, %2$s: settings link
 #: includes/class-old-post-notice-nag.php:64
 #, php-format
 msgid ""
 "Hello! I'm David. I develop this plugin in my spare time. If it has helped "
-"you, please consider %1$s (one-time or monthly) and/or %2$s. This helps me "
-"commit more time to development and keeps it free. You can disable this nag "
-"in %3$s."
+"you, please consider %1$s. You can disable this nag in %2$s."
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:74
@@ -252,10 +250,6 @@ msgstr ""
 
 #: includes/class-old-post-notice-nag.php:64
 msgid "settings"
-msgstr ""
-
-#: includes/class-old-post-notice-nag.php:64
-msgid "sponsoring me on GitHub"
 msgstr ""
 
 #: includes/class-old-post-notice-settings.php:99
