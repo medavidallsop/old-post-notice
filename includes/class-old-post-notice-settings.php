@@ -145,7 +145,7 @@ if ( !class_exists( 'Old_Post_Notice_Settings' ) ) {
 				array(
 					'id'			=> 'nag',
 					'label'			=> esc_html__( 'Nag', 'old-post-notice' ),
-					'description'	=> esc_html__( 'Enable or disable the sponsor/review nag.', 'old-post-notice' ),
+					'description'	=> esc_html__( 'Enable or disable the leave review nag notice.', 'old-post-notice' ),
 					'type'			=> 'checkbox',
 				),
 			);

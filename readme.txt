@@ -1,6 +1,5 @@
 === Old Post Notice ===
 Contributors: medavidallsop
-Donate link: https://github.com/sponsors/medavidallsop
 Tags: old, post, notice, old post, old post notice
 Stable tag: 1.3.0
 Tested up to: 6.6.2
