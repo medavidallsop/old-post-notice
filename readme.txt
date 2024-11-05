@@ -36,6 +36,8 @@ After installation you'll find the settings in **Settings > Old Post Notice**, o
 
 Help contribute towards the development of this plugin via the [GitHub repository](https://github.com/medavidallsop/old-post-notice).
 
+You can also help [translate this plugin into your language](https://translate.wordpress.org/projects/wp-plugins/old-post-notice/).
+
 == Screenshots ==
 
 1. Notice
