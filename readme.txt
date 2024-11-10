@@ -1,7 +1,7 @@
 === Old Post Notice ===
 Contributors: medavidallsop
 Tags: old, post, notice, old post, old post notice
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 Tested up to: 6.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -75,6 +75,10 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * WordPress 5.0.0
 
 == Changelog ==
+
+= 1.3.2 - 2024-11-10 =
+
+* Update: Contribute information
 
 = 1.3.1 - 2024-11-04 =
 
