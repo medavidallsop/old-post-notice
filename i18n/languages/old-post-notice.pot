@@ -1,0 +1,231 @@
+# If copying the contents of this file to a .po file remember to add a Language: xx_XX header.
+msgid ""
+msgstr ""
+"Project-Id-Version: Old Post Notice 2.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-15T06:24:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: old-post-notice\n"
+
+#. Plugin Name of the plugin
+#: old-post-notice.php
+#: src/Settings.php:324
+msgid "Old Post Notice"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: old-post-notice.php
+msgid "https://wordpress.org/plugins/old-post-notice/"
+msgstr ""
+
+#. Description of the plugin
+#: old-post-notice.php
+msgid "Automatically display a customizable notice on posts older than a set number of days - warn readers and keep content fresh."
+msgstr ""
+
+#. Author of the plugin
+#: old-post-notice.php
+msgid "David Allsop"
+msgstr ""
+
+#. Author URI of the plugin
+#: old-post-notice.php
+msgid "https://davidallsop.com"
+msgstr ""
+
+#: src/Posts.php:99
+msgid "Missing required data."
+msgstr ""
+
+#: src/Posts.php:105
+msgid "Security check failed."
+msgstr ""
+
+#: src/Posts.php:123
+msgid "An error occurred while fetching old posts."
+msgstr ""
+
+#: src/Posts.php:142
+#: src/Posts.php:143
+#: src/Posts.php:183
+msgid "Old Posts"
+msgstr ""
+
+#. translators: %s: days.
+#: src/Posts.php:217
+#, php-format
+msgid "These posts display an old post notice because their published date is more than %s days ago."
+msgstr ""
+
+#. translators: %s: days.
+#: src/Posts.php:222
+#, php-format
+msgid "These posts display an old post notice because their modified date is more than%s days ago"
+msgstr ""
+
+#: src/Posts.php:228
+#: src/Settings.php:360
+msgid "Settings"
+msgstr ""
+
+#: src/Posts.php:238
+msgid "Post"
+msgstr ""
+
+#: src/Posts.php:239
+msgid "Published"
+msgstr ""
+
+#: src/Posts.php:240
+msgid "Modified"
+msgstr ""
+
+#: src/Posts.php:245
+msgid "Fetching old posts..."
+msgstr ""
+
+#: src/Posts.php:256
+msgid "View all old posts"
+msgstr ""
+
+#: src/Posts.php:260
+msgid "Enable the dashboard page to view more old posts"
+msgstr ""
+
+#: src/Settings.php:36
+msgid "This post is old, the information may be outdated."
+msgstr ""
+
+#: src/Settings.php:104
+msgid "Enable"
+msgstr ""
+
+#: src/Settings.php:105
+msgid "Toggle the display of the old post notice."
+msgstr ""
+
+#: src/Settings.php:110
+msgid "Notice"
+msgstr ""
+
+#. translators: %s: date placeholder.
+#: src/Settings.php:112
+#, php-format
+msgid "Enter the message to display on old posts. Use %s to insert the post's date."
+msgstr ""
+
+#: src/Settings.php:117
+msgid "Days"
+msgstr ""
+
+#: src/Settings.php:118
+msgid "Set the number of days after which a post is considered old and the notice will appear."
+msgstr ""
+
+#: src/Settings.php:123
+msgid "Date"
+msgstr ""
+
+#: src/Settings.php:124
+msgid "Choose whether to base the notice on the post's published or last modified date."
+msgstr ""
+
+#: src/Settings.php:127
+msgid "Published date"
+msgstr ""
+
+#: src/Settings.php:128
+msgid "Modified date"
+msgstr ""
+
+#: src/Settings.php:133
+msgid "Position"
+msgstr ""
+
+#: src/Settings.php:134
+msgid "Select where the notice should appear within the post."
+msgstr ""
+
+#: src/Settings.php:137
+msgid "Before the content"
+msgstr ""
+
+#: src/Settings.php:138
+msgid "After the content"
+msgstr ""
+
+#: src/Settings.php:143
+msgid "Styling"
+msgstr ""
+
+#. translators: %s: class name.
+#: src/Settings.php:145
+#, php-format
+msgid "Select the styling type. The Default option applies basic styling using the colors defined below. Choose None to style the notice manually via CSS (targeting the %s class)."
+msgstr ""
+
+#: src/Settings.php:148
+msgid "Default"
+msgstr ""
+
+#: src/Settings.php:149
+msgid "None"
+msgstr ""
+
+#: src/Settings.php:154
+msgid "Background color"
+msgstr ""
+
+#: src/Settings.php:155
+msgid "Background color of the notice (applies when using the Default styling option)."
+msgstr ""
+
+#: src/Settings.php:160
+msgid "Text color"
+msgstr ""
+
+#: src/Settings.php:161
+msgid "Text color of the notice (applies when using the Default styling option)."
+msgstr ""
+
+#: src/Settings.php:166
+msgid "Dashboard page"
+msgstr ""
+
+#: src/Settings.php:167
+msgid "Add a page under the Posts menu that lists all posts displaying the old post notice."
+msgstr ""
+
+#: src/Settings.php:172
+msgid "Dashboard widget"
+msgstr ""
+
+#: src/Settings.php:173
+msgid "Add a widget to the dashboard homepage that lists all posts displaying the old post notice."
+msgstr ""
+
+#: src/Settings.php:178
+msgid "Dashboard widget posts"
+msgstr ""
+
+#: src/Settings.php:179
+msgid "Set the number of posts to display in the dashboard widget."
+msgstr ""
+
+#: src/Settings.php:323
+msgid "Old Post Notice Settings"
+msgstr ""
+
+#: assets/static/admin.js:52
+msgid "No old posts."
+msgstr ""
+
+#: assets/static/admin.js:61
+msgid "Error."
+msgstr ""

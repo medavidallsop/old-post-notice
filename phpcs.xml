@@ -1,51 +1,14 @@
 <?xml version="1.0"?>
-<ruleset>
-	<config name="minimum_supported_wp_version" value="5.0.0" />
-	<config name="testVersion" value="7.0-" />
-	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<rule ref="WordPress.WP.I18n">
-		<properties>
-			<property name="text_domain" type="array" value="old-post-notice,default" />
-		</properties>
+<ruleset name="Old Post Notice Standards">
+	<arg value="s" /><!-- Show sniff codes -->
+	<config name="testVersion" value="7.4-9.0" />
+	<rule ref="Squiz.Commenting.FileComment">
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
 	</rule>
 	<rule ref="WordPress-Core">
-		<exclude name="Generic.WhiteSpace.IncrementDecrementSpacing" />
-		<exclude name="Modernize.FunctionCalls.Dirname" />
-		<exclude name="PEAR.Files.IncludingFile" />
-		<exclude name="PSR2.Classes.ClassDeclaration.CloseBraceAfterBody" />
-		<exclude name="PSR2.Files.EndFileNewline.TooMany" />
-		<exclude name="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose" />
-		<exclude name="PSR12.Traits.UseDeclaration" />
-		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing" />
-		<exclude name="Universal.Constants.UppercaseMagicConstants" />
-		<exclude name="Universal.Namespaces" />
-		<exclude name="Universal.UseStatements.NoLeadingBackslash" />
-	</rule>
-	<rule ref="WordPress-Extra">
-		<exclude name="Generic.Commenting.DocComment.SpacingAfter" />
-		<exclude name="Generic.Files.LineEndings.InvalidEOLChar" />
-		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" />
-		<exclude name="Generic.WhiteSpace.LanguageConstructSpacing" />
-		<exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" />
-		<exclude name="NormalizedArrays.Arrays.CommaAfterLast" />
-		<exclude name="PEAR.Functions.FunctionCallSignature" />
-		<exclude name="Squiz.Commenting" />
-		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration" />
-		<exclude name="Squiz.PHP.DisallowSizeFunctionsInLoops.Found" />
-		<exclude name="Squiz.WhiteSpace" />
-		<exclude name="Universal.CodeAnalysis.NoEchoSprintf" />
-		<exclude name="Universal.ControlStructures.DisallowLonelyIf" />
-		<exclude name="Universal.Files.SeparateFunctionsFromOO" />
-		<exclude name="Universal.WhiteSpace" />
-		<exclude name="WordPress.Arrays" />
 		<exclude name="WordPress.Files.FileName" />
-		<exclude name="WordPress.NamingConventions" />
-		<exclude name="WordPress.Security.EscapeOutput.ErrorNotEscaped" />
-		<exclude name="WordPress.Security.EscapeOutput.ExceptionNotEscaped" />
-		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
-		<exclude name="WordPress.WhiteSpace" />
-		<exclude name="WordPress.WP.I18n.EmptyTextDomain" />
-		<exclude name="WordPress.WP.I18n.NonSingularStringLiteralText" />
 	</rule>
+	<rule ref="WordPress-Docs"></rule>
+	<exclude-pattern>/node_modules/</exclude-pattern>
+	<exclude-pattern>/vendor/</exclude-pattern>
 </ruleset>

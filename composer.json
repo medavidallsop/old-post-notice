@@ -1,8 +1,47 @@
 {
+	"name": "opn/old-post-notice",
+	"version": "2.0.0",
+	"autoload": {
+		"psr-4": {
+			"OPN\\OldPostNotice\\": "src/"
+		}
+	},
+	"scripts": {
+		"i18n-makejson": [
+			"wp i18n make-json i18n/languages --no-purge"
+		],
+		"i18n-makemo": [
+			"wp i18n make-mo i18n/languages"
+		],
+		"i18n-makepot": [
+			"wp i18n make-pot . i18n/languages/old-post-notice.pot --exclude=\"client,node_modules,vendor\" --file-comment=\"If copying the contents of this file to a .po file remember to add a Language: xx_XX header.\" --headers='{\"Report-Msgid-Bugs-To\":\"\",\"Last-Translator\":\"\",\"Language-Team\":\"\"}'"
+		],
+		"i18n-updatepo": [
+			"wp i18n update-po i18n/languages/old-post-notice.pot"
+		],
+		"phpcs-check": [
+			"phpcs --extensions=php,html --report-full=phpcs-report.txt --report-source ."
+		],
+		"phpcs-fix": [
+			"phpcbf --extensions=php,html ."
+		],
+		"readme-update": [
+			"php bin/readme-update.php"
+		],
+		"version-check": [
+			"php bin/version-check.php"
+		],
+		"zip": [
+			"rm -rf zip && mkdir -p zip && wp dist-archive ./ ./zip/"
+		]
+	},
 	"require-dev": {
+		"wp-cli/dist-archive-command": "@stable",
+		"wp-cli/i18n-command": "^2.6",
 		"wp-coding-standards/wpcs": "^3.0"
 	},
 	"config": {
+		"autoloader-suffix": "OPNOldPostNotice",
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
