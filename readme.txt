@@ -98,7 +98,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 2.0.0 - 0000-00-00 =
+= 2.0.0 - 2025-10-16 =
 * Update: Assets now minified
 * Update: Better AJAX responses for error handling
 * Update: Complete code refactor
