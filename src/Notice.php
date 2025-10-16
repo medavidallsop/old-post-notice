@@ -29,7 +29,7 @@ class Notice {
 	 * @return string The content of the post with the notice added.
 	 * @since 2.0.0
 	 */
-	public function render_notice( $content ): string {
+	public function render_notice( string $content ): string {
 		// Check if we should display the notice.
 		if ( ! $this->should_display_notice() ) {
 			return $content;
@@ -117,7 +117,7 @@ class Notice {
 	 * @return bool True if post is old enough, false otherwise.
 	 * @since 2.0.0
 	 */
-	private function is_post_old_enough( $settings ): bool {
+	private function is_post_old_enough( array $settings ): bool {
 		$date = ( 'modified' === $settings['date'] ) ? get_the_modified_date( 'Y-m-d' ) : get_the_date( 'Y-m-d' );
 
 		return strtotime( $date ) < strtotime( '-' . $settings['days'] . ' days' );
@@ -130,7 +130,7 @@ class Notice {
 	 * @return string The notice text.
 	 * @since 2.0.0
 	 */
-	private function get_notice_text( $settings ): string {
+	private function get_notice_text( array $settings ): string {
 		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
 
 		return str_replace( '[date]', $date_formatted, $settings['notice'] );
@@ -143,7 +143,7 @@ class Notice {
 	 * @return string The inline styles.
 	 * @since 2.0.0
 	 */
-	private function get_inline_styles( $settings ): string {
+	private function get_inline_styles( array $settings ): string {
 		$inline_styles = '';
 
 		if ( 'none' !== $settings['styling'] && ( ! empty( $settings['color_background'] ) || ! empty( $settings['color_text'] ) ) ) {

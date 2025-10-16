@@ -212,7 +212,7 @@ class Settings {
 	 * @return mixed Sanitized settings.
 	 * @since 2.0.0
 	 */
-	public function sanitize_settings( $settings ): mixed {
+	public function sanitize_settings( array $settings ): mixed {
 		return map_deep( $settings, 'sanitize_text_field' );
 	}
 
@@ -223,7 +223,7 @@ class Settings {
 	 * @return void
 	 * @since 2.0.0
 	 */
-	public function render_settings_field( $args ): void {
+	public function render_settings_field( array $args ): void {
 
 		// Render the field based on the passed field type.
 		$field            = $args['field'];
@@ -356,7 +356,7 @@ class Settings {
 	 * @return array Plugin action links.
 	 * @since 2.0.0
 	 */
-	public function settings_plugin_action_link( $links ): array {
+	public function settings_plugin_action_link( array $links ): array {
 		array_unshift( $links, '<a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '">' . esc_html__( 'Settings', 'old-post-notice' ) . '</a>' );
 		return $links;
 	}

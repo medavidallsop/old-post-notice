@@ -31,7 +31,7 @@ class Posts {
 	 * @return array The old posts.
 	 * @since 2.0.0
 	 */
-	public function get_old_posts( $limit = PHP_INT_MAX ): array {
+	public function get_old_posts( int $limit = PHP_INT_MAX ): array {
 
 		global $wpdb;
 
@@ -204,7 +204,7 @@ class Posts {
 	 * @return void
 	 * @since 2.0.0
 	 */
-	public function dashboard_table_render( $type = 'page' ): void {
+	public function dashboard_table_render( string $type = 'page' ): void {
 
 		$settings       = Settings::get_settings();
 		$days           = $settings['days'];
