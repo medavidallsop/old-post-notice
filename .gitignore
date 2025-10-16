@@ -1,12 +1,7 @@
-# Composer
-vendor/
-
-# Node.js
-node_modules/
-
-# OS
 .DS_Store
-Thumbs.db
-
-# PHPCS
 phpcs-report.txt
+Thumbs.db
+/assets
+/node_modules/
+/vendor/
+/zip

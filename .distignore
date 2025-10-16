@@ -1,0 +1,17 @@
+.*
+.*/
+/bin
+/client
+/zip
+node_modules/
+composer.json
+composer.lock
+package.json
+phpcs-report.txt
+phpcs.xml
+pnpm-lock.yaml
+Thumbs.db
+webpack.config.js
+*.sql
+*.tar.gz
+*.zip
