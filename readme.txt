@@ -65,6 +65,10 @@ This setup improves user experience, boosts blog engagement, and ensures that vi
 
 After installation, access the settings under **Settings > Old Post Notice**. Once enabled, the notice will appear on old posts according to your configured settings.
 
+= Filter Hooks =
+
+- `old_post_notice_text( \$notice_text )` - Filter the notice text before processing.
+
 == Frequently Asked Questions ==
 
 = Can I see a list of posts displaying the old post notice? =
@@ -78,6 +82,14 @@ Yes. Set the styling option to Default, then choose your preferred background an
 = Can I use my own custom CSS? =
 
 Yes. Set the styling option to None, then target the `old-post-notice` class in your CSS to apply custom styles.
+
+= Can I use HTML in the notice? =
+
+Yes. You can use HTML tags in the notice text, including line breaks, formatting tags like `<strong>` and `<em>`, and other common HTML elements. The HTML is automatically sanitized for security, so safe tags like `<p>`, `<br>`, `<strong>`, and `<em>` are allowed, while potentially dangerous tags like `<script>` are removed.
+
+= Can I customize the notice text with code? =
+
+Yes. Use the `old_post_notice_notice_text` filter hook to modify the notice text. This filter receives the raw notice text (with replacements, e.g., `[date]`) and allows you to add custom content or modify the text before it's processed.
 
 == Screenshots ==
 
@@ -99,6 +111,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 == Changelog ==
 
 = 2.1.0 - 0000-00-00 =
+* Add: old_post_notice_text filter hook
 * Update: Allow HTML in notice
 * Update: Inherit notice text color on links added in notices
 

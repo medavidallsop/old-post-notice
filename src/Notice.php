@@ -74,11 +74,27 @@ class Notice {
 		// Get the notice text with date replacement.
 		$notice_text = $this->get_notice_text( $settings );
 
+		/**
+		 * Filter the notice text before processing.
+		 *
+		 * This filter allows you to modify the notice text before it's processed
+		 * with wp_kses_post() and wpautop(). The text will still be sanitized
+		 * and formatted after this filter is applied.
+		 *
+		 * @param string $notice_text The raw notice text with date replacement.
+		 * @return string The filtered notice text.
+		 * @since 2.1.0
+		 */
+		$notice_text = apply_filters( 'old_post_notice_text', $notice_text );
+
+		// Sanitize and format the notice text.
+		$notice_text = wp_kses_post( wpautop( $notice_text ) );
+
 		// Generate inline styles.
 		$inline_styles = $this->get_inline_styles( $settings );
 
 		// Build the notice HTML.
-		$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . wp_kses_post( wpautop( $notice_text ) ) . '</div>';
+		$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . $notice_text . '</div>';
 
 		return $notice_html;
 	}
