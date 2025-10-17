@@ -17,27 +17,13 @@ Automatically display a customizable notice on posts older than a set number of 
 
 Keep your readers informed about outdated content with the Old Post Notice WordPress plugin. Perfect for blogs and websites with extensive archives, it automatically displays a customizable notice on posts older than a set number of days. Ideal for managing archived posts, alerting visitors, and improving content engagement.
 
-= Features =
-
-- Enable or disable the old post notice
-- Customize the notice text and styling
-- Insert the post's published or modified date into the notice
-- Set how many days old a post must be for the notice to appear
-- Display notice based on published or modified dates
-- Position the notice above or below post content
-- Use default styling or custom CSS for full control
-- Set background and text colors for the notice
-- Add a dashboard page listing all posts with notices
-- Add a dashboard widget showing selected posts with notices
-- Perfect for managing archived posts and keeping content up-to-date
-
 = Benefits =
 
 1. **Inform Readers About Outdated Content**
 Use the Old Post Notice plugin to alert visitors when a post is older than a set number of days, helping maintain trust and improve user experience on blogs and websites.
 
 2. **Manage Archived Posts**
-Automatically display notices on older posts, making it easy to manage archive content and guide readers to more recent, relevant articles.
+Access a comprehensive dashboard page that lists all posts displaying the old post notice, giving you complete visibility and control over your archive content management.
 
 3. **Highlight Time-Sensitive Information**
 Perfect for news blogs, tutorials, or guides where information can become outdated. The notice can include the post's published or modified date to provide context.
@@ -60,6 +46,20 @@ By installing the Old Post Notice plugin, Jane can:
 - View and manage all posts with notices via the dashboard page and widget, making archive post management easy.
 
 This setup improves user experience, boosts blog engagement, and ensures that visitors are aware of outdated content, all while maintaining a polished, professional look on her WordPress site.
+
+= Features =
+
+- Enable or disable the old post notice.
+- Customize the notice text and styling.
+- Insert the post's published or modified date into the notice.
+- Set how many days old a post must be for the notice to appear.
+- Display notice based on published or modified dates.
+- Position the notice above or below post content.
+- Use default styling or custom CSS for full control.
+- Set background and text colors for the notice.
+- Add a dashboard page listing all posts with notices.
+- Add a dashboard widget showing selected posts with notices.
+- Perfect for managing archived posts and keeping content up-to-date.
 
 = Usage =
 
