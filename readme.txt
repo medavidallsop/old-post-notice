@@ -100,6 +100,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 = 2.1.0 - 0000-00-00 =
 * Update: Allow HTML in notice
+* Update: Inherit notice text color on links added in notices
 
 = 2.0.0 - 2025-10-16 =
 * Update: Assets now minified
