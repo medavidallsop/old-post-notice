@@ -213,7 +213,20 @@ class Settings {
 	 * @since 2.0.0
 	 */
 	public function sanitize_settings( array $settings ): mixed {
-		return map_deep( $settings, 'sanitize_text_field' );
+		// Sanitize all settings with sanitize_text_field except the notice field
+		$sanitized_settings = array();
+
+		foreach ( $settings as $key => $value ) {
+			if ( 'notice' === $key ) {
+				// For the notice field, use wp_kses_post to allow safe HTML while sanitizing
+				$sanitized_settings[ $key ] = wp_kses_post( $value );
+			} else {
+				// For all other fields, use sanitize_text_field
+				$sanitized_settings[ $key ] = sanitize_text_field( $value );
+			}
+		}
+
+		return $sanitized_settings;
 	}
 
 	/**
@@ -283,7 +296,7 @@ class Settings {
 
 			?>
 
-			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>">
+			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_html( $settings[ $field['id'] ] ) : ''; ?>">
 
 			<?php
 
@@ -293,7 +306,7 @@ class Settings {
 
 			?>
 
-			<textarea id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]"><?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?></textarea>
+			<textarea id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]"><?php echo isset( $settings[ $field['id'] ] ) ? esc_textarea( $settings[ $field['id'] ] ) : ''; ?></textarea>
 
 			<?php
 

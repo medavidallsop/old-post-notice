@@ -4,7 +4,7 @@ Donate link: https://github.com/sponsors/medavidallsop
 Tags: old post notice, outdated content alert, archive post management, post date notice, old post plugin
 Requires at least: 5.0.0
 Tested up to: 6.8
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 Requires PHP: 7.4.0
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -97,6 +97,9 @@ Please see [this documentation](https://wordpress.org/support/article/managing-p
 Please see [this documentation](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins).
 
 == Changelog ==
+
+= 2.1.0 - 0000-00-00 =
+* Update: Allow HTML in notice
 
 = 2.0.0 - 2025-10-16 =
 * Update: Assets now minified
