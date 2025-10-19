@@ -67,7 +67,8 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 = Filter Hooks =
 
-- `old_post_notice_text( \$notice_text )` - Filter the notice text before processing.
+- `old_post_notice_text( \$notice_text )` - Filter the notice text.
+- `old_post_notice_text_before_append( \$append_content )` - Add content before an appended notice set on a post.
 
 == Frequently Asked Questions ==
 
@@ -90,6 +91,12 @@ Yes. You can use HTML tags in the notice text, including line breaks, formatting
 = Can I customize the notice text with code? =
 
 Yes. Use the `old_post_notice_notice_text` filter hook to modify the notice text. This filter receives the raw notice text (with replacements, e.g., `[date]`) and allows you to add custom content or modify the text before it's processed.
+
+= Can I add content before custom metabox content when using append behavior? =
+
+Yes. Use the `old_post_notice_text_before_append` filter hook to add content before an appended notice which is set on a post. For example, if you're appending links to newer posts in your notice, you can add a heading via this hook.
+
+This will display: [Default notice] + "Check out these newer posts:" + [Your appended notice].
 
 == Screenshots ==
 

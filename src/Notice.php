@@ -133,7 +133,7 @@ class Notice {
 	 * @return bool True if post is old enough, false otherwise.
 	 * @since 2.0.0
 	 */
-	private function is_post_old_enough( array $settings ): bool {
+	public function is_post_old_enough( array $settings ): bool {
 		$date = ( 'modified' === $settings['date'] ) ? get_the_modified_date( 'Y-m-d' ) : get_the_date( 'Y-m-d' );
 
 		return strtotime( $date ) < strtotime( '-' . $settings['days'] . ' days' );
@@ -148,8 +148,37 @@ class Notice {
 	 */
 	private function get_notice_text( array $settings ): string {
 		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
+		$default_notice = str_replace( '[date]', $date_formatted, $settings['notice'] );
 
-		return str_replace( '[date]', $date_formatted, $settings['notice'] );
+		// Check for notice set on a post.
+		$notice = get_post_meta( get_the_ID(), '_old_post_notice', true );
+		$behavior = get_post_meta( get_the_ID(), '_old_post_notice_behavior', true );
+
+		// If notice set on a post exists and behavior is set
+		if ( ! empty( $notice ) && ! empty( $behavior ) ) {
+			// Apply date replacement to notice set on a post as well
+			$notice = str_replace( '[date]', $date_formatted, $notice );
+
+			if ( 'replace' === $behavior ) {
+				// Replace the default notice with notice set on a post
+				return $notice;
+			} elseif ( 'append' === $behavior ) {
+				/**
+				 * Filter the content to be added before an appended notice.
+				 *
+				 * @param string $append_content The content to be added before the appended notice.
+				 * @return string The filtered content.
+				 * @since 2.1.0
+				 */
+				$append_content = apply_filters( 'old_post_notice_text_before_append', '' );
+
+				// Append notice set on a post to default notice
+				return $default_notice . $append_content . $notice;
+			}
+		}
+
+		// Return default notice if no custom content or invalid behavior
+		return $default_notice;
 	}
 
 	/**
