@@ -127,7 +127,7 @@ class Posts {
 	}
 
 	/**
-	 * Adds the dashboard page if old post notice is enabled, the dashboard page is enabled and if the user has the edit_posts capability
+	 * Adds the dashboard page if the dashboard page is enabled and if the user has the edit_posts capability
 	 *
 	 * @return void
 	 * @since 2.0.0
@@ -135,10 +135,9 @@ class Posts {
 	public function add_dashboard_page(): void {
 
 		$settings       = Settings::get_settings();
-		$enable         = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 		$dashboard_page = ( isset( $settings['dashboard_page'] ) ? $settings['dashboard_page'] : '0' );
 
-		if ( '1' === $enable && '1' === $dashboard_page && current_user_can( 'edit_posts' ) ) {
+		if ( '1' === $dashboard_page && current_user_can( 'edit_posts' ) ) {
 
 			add_posts_page(
 				esc_html__( 'Old Posts', 'old-post-notice' ),
@@ -173,12 +172,11 @@ class Posts {
 	 * @since 2.0.0
 	 */
 	public function add_dashboard_widget(): void {
-		// Adds the dashboard widget if old post notice is enabled, the dashboard widget is enabled and if the user has the edit_posts capability.
+		// Adds the dashboard widget if the dashboard widget is enabled and if the user has the edit_posts capability.
 		$settings         = Settings::get_settings();
-		$enable           = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 		$dashboard_widget = ( isset( $settings['dashboard_widget'] ) ? $settings['dashboard_widget'] : '0' );
 
-		if ( '1' === $enable && '1' === $dashboard_widget && current_user_can( 'edit_posts' ) ) {
+		if ( '1' === $dashboard_widget && current_user_can( 'edit_posts' ) ) {
 
 			wp_add_dashboard_widget(
 				'old-post-notice-dashboard-widget',
@@ -272,15 +270,14 @@ class Posts {
 	 * @since 2.1.0
 	 */
 	public function add_metabox(): void {
-		// Only add metabox if old post notice is enabled.
-		$settings = Settings::get_settings();
-		if ( '1' !== $settings['enable'] || empty( $settings['notice'] ) || empty( $settings['days'] ) ) {
+		// Check user capability.
+		if ( ! current_user_can( 'edit_posts' ) ) {
 			return;
 		}
 
 		// Check if this post is old enough to show the notice using Notice class method.
-		$notice = new Notice();
-		if ( ! $notice->is_post_old_enough( $settings ) ) {
+		$settings = Settings::get_settings();
+		if ( ! Notice::is_post_old_enough( $settings ) ) {
 			return;
 		}
 
@@ -353,13 +350,13 @@ class Posts {
 			return;
 		}
 
-		// Sanitize and save WYSIWYG content
+		// Sanitize and save notice content.
 		if ( isset( $_POST['old_post_notice'] ) ) {
 			$new_value = wp_kses_post( $_POST['old_post_notice'] ); // Allows safe HTML
 			update_post_meta( $post_id, '_old_post_notice', $new_value );
 		}
 
-		// Sanitize and save select field
+		// Sanitize and save behavior field.
 		if ( isset( $_POST['old_post_notice_behavior'] ) ) {
 			$behavior_value = sanitize_text_field( $_POST['old_post_notice_behavior'] );
 			if ( in_array( $behavior_value, array( 'replace', 'append' ), true ) ) {

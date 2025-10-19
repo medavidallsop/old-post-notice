@@ -67,7 +67,7 @@ class Notice {
 		$settings = Settings::get_settings();
 
 		// Check if notice should be displayed based on age.
-		if ( ! $this->is_post_old_enough( $settings ) ) {
+		if ( ! self::is_post_old_enough( $settings ) ) {
 			return '';
 		}
 
@@ -133,7 +133,7 @@ class Notice {
 	 * @return bool True if post is old enough, false otherwise.
 	 * @since 2.0.0
 	 */
-	public function is_post_old_enough( array $settings ): bool {
+	public static function is_post_old_enough( array $settings ): bool {
 		$date = ( 'modified' === $settings['date'] ) ? get_the_modified_date( 'Y-m-d' ) : get_the_date( 'Y-m-d' );
 
 		return strtotime( $date ) < strtotime( '-' . $settings['days'] . ' days' );
