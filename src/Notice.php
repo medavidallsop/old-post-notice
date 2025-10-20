@@ -123,6 +123,12 @@ class Notice {
 	public static function is_post_old_enough( array $settings ): bool {
 		$date = ( 'modified' === $settings['date'] ) ? get_the_modified_date( 'Y-m-d' ) : get_the_date( 'Y-m-d' );
 
+		// Return false if date is invalid or false.
+		if ( false === $date || empty( $date ) ) {
+			// get_the_modified_date() and get_the_date() can return false in certain circumstances (like when called outside the loop or when there's no post data)
+			return false;
+		}
+
 		return strtotime( $date ) < strtotime( '-' . $settings['days'] . ' days' );
 	}
 

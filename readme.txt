@@ -122,12 +122,13 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 2.1.0 - 0000-00-00 =
-* Add: Old post notice metabox to old posts.
-* Add: Replace or append to default notice functionality when editing old posts.
+= 2.1.0 - 2025-10-20 =
+* Add: Old post notice metabox to old posts
+* Add: Replace or append to default notice functionality when editing old posts
 * Add: old_post_notice_before_append filter hook
 * Update: Allow HTML in notice
 * Update: Inherit notice text color on links added in notices
+* Fix: Add catches for get_the_modified_date() and get_the_date() returning false in certain circumstances
 
 = 2.0.0 - 2025-10-16 =
 * Update: Assets now minified
