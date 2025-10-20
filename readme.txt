@@ -108,6 +108,7 @@ This will display: [Default notice] + "My Heading" + [Your appended notice].
 2. Includes several settings to configure the old post notice.
 3. Adds a page under the Posts menu that lists all posts displaying the old post notice.
 4. Adds a widget to the dashboard homepage that lists all posts displaying the old post notice.
+5. Replace or append to the default notice when editing a post.
 
 == Installation ==
 
