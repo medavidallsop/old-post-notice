@@ -78,6 +78,8 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 Yes. When editing individual old posts, you can set a notice and choose whether to replace the default notice or append to it.
 
+This is a metabox, so it is compatible with both the Block and Classic editors. On the block editor, you may need to reveal the metabox by using the resize bar at the bottom.
+
 = Can I see a list of posts displaying the old post notice? =
 
 Yes. You can view posts with the notice by enabling the dashboard page and/or the dashboard widget.
@@ -98,7 +100,7 @@ Yes. You can use HTML tags in the notice text, including line breaks, formatting
 
 Yes. Use the `old_post_notice_before_append` filter hook to add content before an appended notice. For example, if you're appending links to newer posts to your default notice, you can add a general heading before the links with this hook.
 
-This will display: [Default notice] + "Check out these newer posts: (your heading)" + [Your appended notice].
+This will display: [Default notice] + "My Heading" + [Your appended notice].
 
 == Screenshots ==
 
