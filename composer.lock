@@ -4,7 +4,7 @@
 		"Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
 		"This file is @generated automatically"
 	],
-	"content-hash": "42f77e95b9996f181f364d109ceb2d68",
+	"content-hash": "0bd36458090d19533eac704f157d65bf",
 	"packages": [],
 	"packages-dev": [
 		{
@@ -44,7 +44,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Franck Nijhof",
@@ -135,7 +137,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Jorge Patricio Castro Castillo",
@@ -144,7 +148,13 @@
 			],
 			"description": "The standalone version Blade Template Engine from Laravel in a single php file",
 			"homepage": "https://github.com/EFTEC/BladeOne",
-			"keywords": ["blade", "php", "template", "templating", "view"],
+			"keywords": [
+				"blade",
+				"php",
+				"template",
+				"templating",
+				"view"
+			],
 			"support": {
 				"issues": "https://github.com/EFTEC/BladeOne/issues",
 				"source": "https://github.com/EFTEC/BladeOne/tree/3.52"
@@ -190,7 +200,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Oscar Otero",
@@ -201,7 +213,14 @@
 			],
 			"description": "PHP gettext manager",
 			"homepage": "https://github.com/oscarotero/Gettext",
-			"keywords": ["JS", "gettext", "i18n", "mo", "po", "translation"],
+			"keywords": [
+				"JS",
+				"gettext",
+				"i18n",
+				"mo",
+				"po",
+				"translation"
+			],
 			"support": {
 				"email": "oom@oscarotero.com",
 				"issues": "https://github.com/oscarotero/Gettext/issues",
@@ -243,7 +262,10 @@
 			"require-dev": {
 				"phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.5 || ^8.4"
 			},
-			"bin": ["bin/export-plural-rules", "bin/import-cldr-data"],
+			"bin": [
+				"bin/export-plural-rules",
+				"bin/import-cldr-data"
+			],
 			"type": "library",
 			"autoload": {
 				"psr-4": {
@@ -251,7 +273,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Michele Locati",
@@ -320,7 +344,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Emanuele Gaspari",
@@ -329,7 +355,11 @@
 				}
 			],
 			"description": "A PHP library to check if a path is ignored by GIT",
-			"keywords": ["git", "gitignore", "vcs"],
+			"keywords": [
+				"git",
+				"gitignore",
+				"vcs"
+			],
 			"support": {
 				"issues": "https://github.com/inmarelibero/gitignore-checker/issues",
 				"source": "https://github.com/inmarelibero/gitignore-checker/tree/1.0.4"
@@ -369,7 +399,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["BSD-3-Clause"],
+			"license": [
+				"BSD-3-Clause"
+			],
 			"authors": [
 				{
 					"name": "Marco Marchiò",
@@ -417,7 +449,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["LGPL-3.0-or-later"],
+			"license": [
+				"LGPL-3.0-or-later"
+			],
 			"authors": [
 				{
 					"name": "Juliette Reinders Folmer",
@@ -465,16 +499,16 @@
 		},
 		{
 			"name": "phpcsstandards/phpcsutils",
-			"version": "1.1.2",
+			"version": "1.1.3",
 			"source": {
 				"type": "git",
 				"url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
-				"reference": "b22b59e3d9ec8fe4953e42c7d59117c6eae70eae"
+				"reference": "8b8e17615d04f2fc2cd46fc1d2fd888fa21b3cf9"
 			},
 			"dist": {
 				"type": "zip",
-				"url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/b22b59e3d9ec8fe4953e42c7d59117c6eae70eae",
-				"reference": "b22b59e3d9ec8fe4953e42c7d59117c6eae70eae",
+				"url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/8b8e17615d04f2fc2cd46fc1d2fd888fa21b3cf9",
+				"reference": "8b8e17615d04f2fc2cd46fc1d2fd888fa21b3cf9",
 				"shasum": ""
 			},
 			"require": {
@@ -497,10 +531,14 @@
 				}
 			},
 			"autoload": {
-				"classmap": ["PHPCSUtils/"]
+				"classmap": [
+					"PHPCSUtils/"
+				]
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["LGPL-3.0-or-later"],
+			"license": [
+				"LGPL-3.0-or-later"
+			],
 			"authors": [
 				{
 					"name": "Juliette Reinders Folmer",
@@ -550,7 +588,7 @@
 					"type": "thanks_dev"
 				}
 			],
-			"time": "2025-09-05T00:00:03+00:00"
+			"time": "2025-10-16T16:39:32+00:00"
 		},
 		{
 			"name": "squizlabs/php_codesniffer",
@@ -575,7 +613,10 @@
 			"require-dev": {
 				"phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.3.4"
 			},
-			"bin": ["bin/phpcbf", "bin/phpcs"],
+			"bin": [
+				"bin/phpcbf",
+				"bin/phpcs"
+			],
 			"type": "library",
 			"extra": {
 				"branch-alias": {
@@ -583,7 +624,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["BSD-3-Clause"],
+			"license": [
+				"BSD-3-Clause"
+			],
 			"authors": [
 				{
 					"name": "Greg Sherwood",
@@ -600,7 +643,11 @@
 			],
 			"description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
 			"homepage": "https://github.com/PHPCSStandards/PHP_CodeSniffer",
-			"keywords": ["phpcs", "standards", "static analysis"],
+			"keywords": [
+				"phpcs",
+				"standards",
+				"static analysis"
+			],
 			"support": {
 				"issues": "https://github.com/PHPCSStandards/PHP_CodeSniffer/issues",
 				"security": "https://github.com/PHPCSStandards/PHP_CodeSniffer/security/policy",
@@ -652,10 +699,14 @@
 				"psr-4": {
 					"Symfony\\Component\\Finder\\": ""
 				},
-				"exclude-from-classmap": ["/Tests/"]
+				"exclude-from-classmap": [
+					"/Tests/"
+				]
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Fabien Potencier",
@@ -722,14 +773,22 @@
 						"[![Testing](https://github.com/wp-cli/dist-archive-command/actions/workflows/testing.yml/badge.svg)](https://github.com/wp-cli/dist-archive-command/actions/workflows/testing.yml)"
 					]
 				},
-				"commands": ["dist-archive"]
+				"commands": [
+					"dist-archive"
+				]
 			},
 			"autoload": {
-				"files": ["dist-archive-command.php"],
-				"classmap": ["src/"]
+				"files": [
+					"dist-archive-command.php"
+				],
+				"classmap": [
+					"src/"
+				]
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Daniel Bachhuber",
@@ -789,13 +848,17 @@
 				}
 			},
 			"autoload": {
-				"files": ["i18n-command.php"],
+				"files": [
+					"i18n-command.php"
+				],
 				"psr-4": {
 					"WP_CLI\\I18n\\": "src/"
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Pascal Birchler",
@@ -841,7 +904,9 @@
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Justin Hileman",
@@ -851,7 +916,10 @@
 			],
 			"description": "A Mustache implementation in PHP.",
 			"homepage": "https://github.com/bobthecow/mustache.php",
-			"keywords": ["mustache", "templating"],
+			"keywords": [
+				"mustache",
+				"templating"
+			],
 			"support": {
 				"source": "https://github.com/wp-cli/mustache.php/tree/v2.14.99"
 			},
@@ -884,13 +952,17 @@
 				}
 			},
 			"autoload": {
-				"files": ["includes/functions.php"],
+				"files": [
+					"includes/functions.php"
+				],
 				"psr-4": {
 					"Mustangostang\\": "src/"
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "mustangostang",
@@ -932,13 +1004,17 @@
 				}
 			},
 			"autoload": {
-				"files": ["lib/cli/cli.php"],
+				"files": [
+					"lib/cli/cli.php"
+				],
 				"psr-0": {
 					"cli": "lib/"
 				}
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Daniel Bachhuber",
@@ -953,7 +1029,10 @@
 			],
 			"description": "Console utilities for PHP",
 			"homepage": "http://github.com/wp-cli/php-cli-tools",
-			"keywords": ["cli", "console"],
+			"keywords": [
+				"cli",
+				"console"
+			],
 			"support": {
 				"issues": "https://github.com/wp-cli/php-cli-tools/issues",
 				"source": "https://github.com/wp-cli/php-cli-tools/tree/v0.12.6"
@@ -993,7 +1072,10 @@
 				"ext-readline": "Include for a better --prompt implementation",
 				"ext-zip": "Needed to support extraction of ZIP archives when doing downloads or updates"
 			},
-			"bin": ["bin/wp", "bin/wp.bat"],
+			"bin": [
+				"bin/wp",
+				"bin/wp.bat"
+			],
 			"type": "library",
 			"extra": {
 				"branch-alias": {
@@ -1010,10 +1092,15 @@
 				]
 			},
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"description": "WP-CLI framework",
 			"homepage": "https://wp-cli.org",
-			"keywords": ["cli", "wordpress"],
+			"keywords": [
+				"cli",
+				"wordpress"
+			],
 			"support": {
 				"docs": "https://make.wordpress.org/cli/handbook/",
 				"issues": "https://github.com/wp-cli/wp-cli/issues",
@@ -1058,7 +1145,9 @@
 			},
 			"type": "phpcodesniffer-standard",
 			"notification-url": "https://packagist.org/downloads/",
-			"license": ["MIT"],
+			"license": [
+				"MIT"
+			],
 			"authors": [
 				{
 					"name": "Contributors",
@@ -1066,7 +1155,12 @@
 				}
 			],
 			"description": "PHP_CodeSniffer rules (sniffs) to enforce WordPress coding conventions",
-			"keywords": ["phpcs", "standards", "static analysis", "wordpress"],
+			"keywords": [
+				"phpcs",
+				"standards",
+				"static analysis",
+				"wordpress"
+			],
 			"support": {
 				"issues": "https://github.com/WordPress/WordPress-Coding-Standards/issues",
 				"source": "https://github.com/WordPress/WordPress-Coding-Standards",
