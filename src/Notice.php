@@ -125,7 +125,7 @@ class Notice {
 
 		// Return false if date is invalid or false.
 		if ( false === $date || empty( $date ) ) {
-			// get_the_modified_date() and get_the_date() can return false in certain circumstances (like when called outside the loop or when there's no post data)
+			// get_the_modified_date() and get_the_date() can return false in certain circumstances (like when called outside the loop or when there's no post data).
 			return false;
 		}
 
