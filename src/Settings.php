@@ -213,15 +213,15 @@ class Settings {
 	 * @since 2.0.0
 	 */
 	public function sanitize_settings( array $settings ): mixed {
-		// Sanitize all settings with sanitize_text_field except the notice field
+		// Sanitize all settings with sanitize_text_field except the notice field.
 		$sanitized_settings = array();
 
 		foreach ( $settings as $key => $value ) {
 			if ( 'notice' === $key ) {
-				// For the notice field, use wp_kses_post to allow safe HTML while sanitizing
+				// For the notice field, use wp_kses_post to allow safe HTML while sanitizing.
 				$sanitized_settings[ $key ] = wp_kses_post( $value );
 			} else {
-				// For all other fields, use sanitize_text_field
+				// For all other fields, use sanitize_text_field.
 				$sanitized_settings[ $key ] = sanitize_text_field( $value );
 			}
 		}

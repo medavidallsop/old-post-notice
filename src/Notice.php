@@ -138,15 +138,15 @@ class Notice {
 		$default_notice = $settings['notice'];
 
 		// Check for a notice set on a post.
-		$notice = get_post_meta( get_the_ID(), '_old_post_notice', true );
+		$notice   = get_post_meta( get_the_ID(), '_old_post_notice', true );
 		$behavior = get_post_meta( get_the_ID(), '_old_post_notice_behavior', true );
 
-		// If a notice has been set on a post and the behavior is set
+		// If a notice has been set on a post and the behavior is set.
 		if ( ! empty( $notice ) && ! empty( $behavior ) ) {
 
 			if ( 'replace' === $behavior ) {
 
-				// Replace the default notice
+				// Replace the default notice.
 				$final_notice = $notice;
 
 			} elseif ( 'append' === $behavior ) {
@@ -163,7 +163,7 @@ class Notice {
 				$final_notice = $default_notice . $append_content . $notice;
 			}
 		} else {
-			// Use default notice if no custom content or invalid behavior
+			// Use default notice if no custom content or invalid behavior.
 			$final_notice = $default_notice;
 		}
 

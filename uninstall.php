@@ -12,11 +12,11 @@ defined( 'WP_UNINSTALL_PLUGIN' ) or exit;
 
 global $wpdb;
 
-// Options
+// Options.
 delete_option( 'old_post_notice_settings' );
 delete_option( 'old_post_notice_version' );
 
-// Post meta
+// Post meta.
 $wpdb->delete(
 	$wpdb->postmeta,
 	array( 'meta_key' => '_old_post_notice' ),

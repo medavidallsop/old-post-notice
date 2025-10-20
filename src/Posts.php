@@ -295,13 +295,13 @@ class Posts {
 	/**
 	 * Render the metabox.
 	 *
-	 * @param WP_Post $post The post object.
+	 * @param \WP_Post $post The post object.
 	 * @return void
 	 * @since 2.1.0
 	 */
 	public function metabox_render( \WP_Post $post ): void {
-		$notes_value      = get_post_meta( $post->ID, '_old_post_notice', true );
-		$behavior_value   = get_post_meta( $post->ID, '_old_post_notice_behavior', true );
+		$notes_value    = get_post_meta( $post->ID, '_old_post_notice', true );
+		$behavior_value = get_post_meta( $post->ID, '_old_post_notice_behavior', true );
 
 		wp_nonce_field( 'old_post_notice_save_metabox', 'old_post_notice_metabox_nonce' );
 
@@ -331,28 +331,28 @@ class Posts {
 	 * @since 2.1.0
 	 */
 	public function save_metabox( int $post_id ): void {
-		// Verify nonce
+		// Verify nonce.
 		if ( ! isset( $_POST['old_post_notice_metabox_nonce'] ) ||
-		     ! wp_verify_nonce( $_POST['old_post_notice_metabox_nonce'], 'old_post_notice_save_metabox' ) ) {
+			! wp_verify_nonce( $_POST['old_post_notice_metabox_nonce'], 'old_post_notice_save_metabox' ) ) {
 			return;
 		}
 
-		// Prevent autosave or quick edit overwrites
+		// Prevent autosave or quick edit overwrites.
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
-		if ( isset( $_POST['action'] ) && $_POST['action'] === 'inline-save' ) {
+		if ( isset( $_POST['action'] ) && 'inline-save' === $_POST['action'] ) {
 			return;
 		}
 
-		// Check permissions
+		// Check permissions.
 		if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
 
 		// Sanitize and save notice content.
 		if ( isset( $_POST['old_post_notice'] ) ) {
-			$new_value = wp_kses_post( $_POST['old_post_notice'] ); // Allows safe HTML
+			$new_value = wp_kses_post( $_POST['old_post_notice'] ); // Allows safe HTML.
 			update_post_meta( $post_id, '_old_post_notice', $new_value );
 		}
 
