@@ -284,7 +284,7 @@ class Posts {
 		// Add metabox.
 		add_meta_box(
 			'old_post_notice_metabox',
-			__( 'Old Post Notice', 'old-post-notice' ),
+			esc_html__( 'Old Post Notice', 'old-post-notice' ),
 			array( $this, 'metabox_render' ),
 			'post',
 			'normal',
@@ -309,8 +309,8 @@ class Posts {
 
 		echo '<p><select id="old-post-notice-metabox-behavior" name="old_post_notice_behavior">';
 		$options = array(
-			'replace' => __( 'Replace default notice', 'old-post-notice' ),
-			'append'  => __( 'Append to default notice', 'old-post-notice' ),
+			'replace' => esc_html__( 'Replace default notice', 'old-post-notice' ),
+			'append'  => esc_html__( 'Append to default notice', 'old-post-notice' ),
 		);
 		foreach ( $options as $key => $label ) {
 			printf(

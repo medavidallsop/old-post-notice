@@ -74,19 +74,6 @@ class Notice {
 		// Get the notice text with date replacement.
 		$notice_text = $this->get_notice_text( $settings );
 
-		/**
-		 * Filter the notice text before processing.
-		 *
-		 * This filter allows you to modify the notice text before it's processed
-		 * with wp_kses_post() and wpautop(). The text will still be sanitized
-		 * and formatted after this filter is applied.
-		 *
-		 * @param string $notice_text The raw notice text with date replacement.
-		 * @return string The filtered notice text.
-		 * @since 2.1.0
-		 */
-		$notice_text = apply_filters( 'old_post_notice_text', $notice_text );
-
 		// Sanitize and format the notice text.
 		$notice_text = wp_kses_post( wpautop( $notice_text ) );
 
@@ -147,21 +134,21 @@ class Notice {
 	 * @since 2.0.0
 	 */
 	private function get_notice_text( array $settings ): string {
-		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
-		$default_notice = str_replace( '[date]', $date_formatted, $settings['notice'] );
+		// Get the default notice text.
+		$default_notice = $settings['notice'];
 
-		// Check for notice set on a post.
+		// Check for a notice set on a post.
 		$notice = get_post_meta( get_the_ID(), '_old_post_notice', true );
 		$behavior = get_post_meta( get_the_ID(), '_old_post_notice_behavior', true );
 
-		// If notice set on a post exists and behavior is set
+		// If a notice has been set on a post and the behavior is set
 		if ( ! empty( $notice ) && ! empty( $behavior ) ) {
-			// Apply date replacement to notice set on a post as well
-			$notice = str_replace( '[date]', $date_formatted, $notice );
 
 			if ( 'replace' === $behavior ) {
-				// Replace the default notice with notice set on a post
-				return $notice;
+
+				// Replace the default notice
+				$final_notice = $notice;
+
 			} elseif ( 'append' === $behavior ) {
 				/**
 				 * Filter the content to be added before an appended notice.
@@ -170,15 +157,19 @@ class Notice {
 				 * @return string The filtered content.
 				 * @since 2.1.0
 				 */
-				$append_content = apply_filters( 'old_post_notice_text_before_append', '' );
+				$append_content = apply_filters( 'old_post_notice_before_append', '' );
 
-				// Append notice set on a post to default notice
-				return $default_notice . $append_content . $notice;
+				// Append the notice to the default notice.
+				$final_notice = $default_notice . $append_content . $notice;
 			}
+		} else {
+			// Use default notice if no custom content or invalid behavior
+			$final_notice = $default_notice;
 		}
 
-		// Return default notice if no custom content or invalid behavior
-		return $default_notice;
+		// Apply date replacement once to the final notice text.
+		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
+		return str_replace( '[date]', $date_formatted, $final_notice );
 	}
 
 	/**
