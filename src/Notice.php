@@ -67,18 +67,21 @@ class Notice {
 		$settings = Settings::get_settings();
 
 		// Check if notice should be displayed based on age.
-		if ( ! $this->is_post_old_enough( $settings ) ) {
+		if ( ! self::is_post_old_enough( $settings ) ) {
 			return '';
 		}
 
 		// Get the notice text with date replacement.
 		$notice_text = $this->get_notice_text( $settings );
 
+		// Sanitize and format the notice text.
+		$notice_text = wp_kses_post( wpautop( $notice_text ) );
+
 		// Generate inline styles.
 		$inline_styles = $this->get_inline_styles( $settings );
 
 		// Build the notice HTML.
-		$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . wp_kses_post( wpautop( $notice_text ) ) . '</div>';
+		$notice_html = '<div class="old-post-notice"' . $inline_styles . '>' . $notice_text . '</div>';
 
 		return $notice_html;
 	}
@@ -117,8 +120,14 @@ class Notice {
 	 * @return bool True if post is old enough, false otherwise.
 	 * @since 2.0.0
 	 */
-	private function is_post_old_enough( array $settings ): bool {
+	public static function is_post_old_enough( array $settings ): bool {
 		$date = ( 'modified' === $settings['date'] ) ? get_the_modified_date( 'Y-m-d' ) : get_the_date( 'Y-m-d' );
+
+		// Return false if date is invalid or false.
+		if ( false === $date || empty( $date ) ) {
+			// get_the_modified_date() and get_the_date() can return false in certain circumstances (like when called outside the loop or when there's no post data).
+			return false;
+		}
 
 		return strtotime( $date ) < strtotime( '-' . $settings['days'] . ' days' );
 	}
@@ -131,9 +140,42 @@ class Notice {
 	 * @since 2.0.0
 	 */
 	private function get_notice_text( array $settings ): string {
-		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
+		// Get the default notice text.
+		$default_notice = $settings['notice'];
 
-		return str_replace( '[date]', $date_formatted, $settings['notice'] );
+		// Check for a notice set on a post.
+		$notice   = get_post_meta( get_the_ID(), '_old_post_notice', true );
+		$behavior = get_post_meta( get_the_ID(), '_old_post_notice_behavior', true );
+
+		// If a notice has been set on a post and the behavior is set.
+		if ( ! empty( $notice ) && ! empty( $behavior ) ) {
+
+			if ( 'replace' === $behavior ) {
+
+				// Replace the default notice.
+				$final_notice = $notice;
+
+			} elseif ( 'append' === $behavior ) {
+				/**
+				 * Filter the content to be added before an appended notice.
+				 *
+				 * @param string $append_content The content to be added before the appended notice.
+				 * @return string The filtered content.
+				 * @since 2.1.0
+				 */
+				$append_content = apply_filters( 'old_post_notice_before_append', '' );
+
+				// Append the notice to the default notice.
+				$final_notice = $default_notice . $append_content . $notice;
+			}
+		} else {
+			// Use default notice if no custom content or invalid behavior.
+			$final_notice = $default_notice;
+		}
+
+		// Apply date replacement once to the final notice text.
+		$date_formatted = ( 'modified' === $settings['date'] ) ? get_the_modified_date() : get_the_date();
+		return str_replace( '[date]', $date_formatted, $final_notice );
 	}
 
 	/**

@@ -61,6 +61,13 @@ class Enqueues {
 			)
 		);
 
+		wp_enqueue_style(
+			'old-post-notice-admin',
+			OLD_POST_NOTICE_PLUGIN_DIR_URL . 'assets/static/admin.min.css',
+			array(),
+			OLD_POST_NOTICE_PLUGIN_VERSION
+		);
+
 		if ( 'options-general.php' === $pagenow ) {
 
 			if ( isset( $_GET['page'] ) ) {
@@ -68,13 +75,6 @@ class Enqueues {
 				if ( 'old-post-notice' === $_GET['page'] ) {
 
 					wp_enqueue_style( 'wp-color-picker' );
-
-					wp_enqueue_style(
-						'old-post-notice-admin',
-						OLD_POST_NOTICE_PLUGIN_DIR_URL . 'assets/static/admin.min.css',
-						array(),
-						OLD_POST_NOTICE_PLUGIN_VERSION
-					);
 
 				}
 			}

@@ -2,10 +2,10 @@
 /**
  * Plugin Name: Old Post Notice
  * Plugin URI: https://wordpress.org/plugins/old-post-notice/
- * Description: Automatically display a customizable notice on posts older than a set number of days - warn readers and keep content fresh.
+ * Description: Automatically display a customizable notice on posts older than a set number of days.
  * Author: David Allsop
  * Author URI: https://davidallsop.com
- * Version: 2.0.0
+ * Version: 2.1.0
  * Requires at least: 5.0.0
  * Requires PHP: 7.4.0
  * Domain Path: /i18n/languages/
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		 * @var string
 		 * @since 2.0.0
 		 */
-		public $version = '2.0.0';
+		public $version = '2.1.0';
 
 		/**
 		 * Main instance of the plugin.

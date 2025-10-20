@@ -22,6 +22,8 @@ class Posts {
 		add_action( 'wp_ajax_old_post_notice_old_posts', array( $this, 'get_old_posts_ajax' ) );
 		add_action( 'admin_menu', array( $this, 'add_dashboard_page' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
+		add_action( 'add_meta_boxes', array( $this, 'add_metabox' ) );
+		add_action( 'save_post', array( $this, 'save_metabox' ) );
 	}
 
 	/**
@@ -119,13 +121,13 @@ class Posts {
 
 			wp_send_json_success( $old_posts );
 
-		} catch ( Exception $e ) {
+		} catch ( \Exception $e ) {
 			wp_send_json_error( array( 'message' => __( 'An error occurred while fetching old posts.', 'old-post-notice' ) ) );
 		}
 	}
 
 	/**
-	 * Adds the dashboard page if old post notice is enabled, the dashboard page is enabled and if the user has the edit_posts capability
+	 * Adds the dashboard page if the dashboard page is enabled and if the user has the edit_posts capability
 	 *
 	 * @return void
 	 * @since 2.0.0
@@ -133,10 +135,9 @@ class Posts {
 	public function add_dashboard_page(): void {
 
 		$settings       = Settings::get_settings();
-		$enable         = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 		$dashboard_page = ( isset( $settings['dashboard_page'] ) ? $settings['dashboard_page'] : '0' );
 
-		if ( '1' === $enable && '1' === $dashboard_page && current_user_can( 'edit_posts' ) ) {
+		if ( '1' === $dashboard_page && current_user_can( 'edit_posts' ) ) {
 
 			add_posts_page(
 				esc_html__( 'Old Posts', 'old-post-notice' ),
@@ -171,12 +172,11 @@ class Posts {
 	 * @since 2.0.0
 	 */
 	public function add_dashboard_widget(): void {
-		// Adds the dashboard widget if old post notice is enabled, the dashboard widget is enabled and if the user has the edit_posts capability.
+		// Adds the dashboard widget if the dashboard widget is enabled and if the user has the edit_posts capability.
 		$settings         = Settings::get_settings();
-		$enable           = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 		$dashboard_widget = ( isset( $settings['dashboard_widget'] ) ? $settings['dashboard_widget'] : '0' );
 
-		if ( '1' === $enable && '1' === $dashboard_widget && current_user_can( 'edit_posts' ) ) {
+		if ( '1' === $dashboard_widget && current_user_can( 'edit_posts' ) ) {
 
 			wp_add_dashboard_widget(
 				'old-post-notice-dashboard-widget',
@@ -259,6 +259,108 @@ class Posts {
 
 				echo '<p><a href="' . esc_url( get_admin_url() . 'options-general.php?page=old-post-notice' ) . '">' . esc_html__( 'Enable the dashboard page to view more old posts', 'old-post-notice' ) . '</a></p>';
 
+			}
+		}
+	}
+
+	/**
+	 * Add the metabox.
+	 *
+	 * @return void
+	 * @since 2.1.0
+	 */
+	public function add_metabox(): void {
+		// Check user capability.
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			return;
+		}
+
+		// Check if this post is old enough to show the notice using Notice class method.
+		$settings = Settings::get_settings();
+		if ( ! Notice::is_post_old_enough( $settings ) ) {
+			return;
+		}
+
+		// Add metabox.
+		add_meta_box(
+			'old_post_notice_metabox',
+			esc_html__( 'Old Post Notice', 'old-post-notice' ),
+			array( $this, 'metabox_render' ),
+			'post',
+			'normal',
+			'default',
+		);
+	}
+
+	/**
+	 * Render the metabox.
+	 *
+	 * @param \WP_Post $post The post object.
+	 * @return void
+	 * @since 2.1.0
+	 */
+	public function metabox_render( \WP_Post $post ): void {
+		$notes_value    = get_post_meta( $post->ID, '_old_post_notice', true );
+		$behavior_value = get_post_meta( $post->ID, '_old_post_notice_behavior', true );
+
+		wp_nonce_field( 'old_post_notice_save_metabox', 'old_post_notice_metabox_nonce' );
+
+		echo '<textarea id="old-post-notice-metabox-notice" name="old_post_notice" placeholder="' . esc_attr__( 'This is an old post, it will display a default notice to the user. You can replace the default notice or append to it.', 'old-post-notice' ) . '">' . esc_textarea( $notes_value ) . '</textarea>';
+
+		echo '<p><select id="old-post-notice-metabox-behavior" name="old_post_notice_behavior">';
+		$options = array(
+			'replace' => esc_html__( 'Replace default notice', 'old-post-notice' ),
+			'append'  => esc_html__( 'Append to default notice', 'old-post-notice' ),
+		);
+		foreach ( $options as $key => $label ) {
+			printf(
+				'<option value="%s" %s>%s</option>',
+				esc_attr( $key ),
+				selected( $behavior_value, $key, false ),
+				esc_html( $label )
+			);
+		}
+		echo '</select></p>';
+	}
+
+	/**
+	 * Save the metabox values.
+	 *
+	 * @param int $post_id The post ID.
+	 * @return void
+	 * @since 2.1.0
+	 */
+	public function save_metabox( int $post_id ): void {
+		// Verify nonce.
+		if ( ! isset( $_POST['old_post_notice_metabox_nonce'] ) ||
+			! wp_verify_nonce( $_POST['old_post_notice_metabox_nonce'], 'old_post_notice_save_metabox' ) ) {
+			return;
+		}
+
+		// Prevent autosave or quick edit overwrites.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+		if ( isset( $_POST['action'] ) && 'inline-save' === $_POST['action'] ) {
+			return;
+		}
+
+		// Check permissions.
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+
+		// Sanitize and save notice content.
+		if ( isset( $_POST['old_post_notice'] ) ) {
+			$new_value = wp_kses_post( $_POST['old_post_notice'] ); // Allows safe HTML.
+			update_post_meta( $post_id, '_old_post_notice', $new_value );
+		}
+
+		// Sanitize and save behavior field.
+		if ( isset( $_POST['old_post_notice_behavior'] ) ) {
+			$behavior_value = sanitize_text_field( $_POST['old_post_notice_behavior'] );
+			if ( in_array( $behavior_value, array( 'replace', 'append' ), true ) ) {
+				update_post_meta( $post_id, '_old_post_notice_behavior', $behavior_value );
 			}
 		}
 	}
