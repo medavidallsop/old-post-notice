@@ -14,6 +14,13 @@ defined( 'ABSPATH' ) or exit;
 class Settings {
 
 	/**
+	 * Option name for settings.
+	 *
+	 * @since 2.2.0
+	 */
+	const OPTION_NAME = 'old_post_notice_settings';
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 2.0.0
@@ -53,7 +60,7 @@ class Settings {
 	 * @since 2.0.0
 	 */
 	public static function get_settings(): array {
-		$saved_settings = get_option( 'old_post_notice_settings', array() );
+		$saved_settings = get_option( self::OPTION_NAME, array() );
 		$defaults       = self::get_default_settings();
 
 		return array(
@@ -82,7 +89,7 @@ class Settings {
 		// Register the old_post_notice_settings option.
 		register_setting(
 			'old-post-notice',
-			'old_post_notice_settings',
+			self::OPTION_NAME,
 			array(
 				'sanitize_callback' => array( $this, 'sanitize_settings' ),
 				'type'              => 'array',
@@ -240,14 +247,14 @@ class Settings {
 
 		// Render the field based on the passed field type.
 		$field            = $args['field'];
-		$settings         = get_option( 'old_post_notice_settings' );
+		$settings         = get_option( self::OPTION_NAME );
 		$show_description = false;
 
 		if ( 'checkbox' === $field['type'] ) {
 
 			?>
 
-			<input type="checkbox" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="1"<?php echo isset( $settings[ $field['id'] ] ) ? ( checked( $settings[ $field['id'] ], 1, false ) ) : ( '' ); ?>>
+			<input type="checkbox" id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]" value="1"<?php echo isset( $settings[ $field['id'] ] ) ? ( checked( $settings[ $field['id'] ], 1, false ) ) : ( '' ); ?>>
 
 			<?php
 
@@ -257,7 +264,7 @@ class Settings {
 
 			?>
 
-			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" class="old-post-notice-color-picker" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>">
+			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" class="old-post-notice-color-picker" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>">
 
 			<?php
 
@@ -268,7 +275,7 @@ class Settings {
 			// This includes some specific attributes for the days field, if additonal number fields are used in future will need to set attributes in an array and pass here instead, note that the max attribute set below is done as found in testing if using something like 999999999 it causes the date queries to break when getting posts showing the notice.
 			?>
 
-			<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>" min="1" step="1" max="36525">
+			<input type="number" id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_attr( $settings[ $field['id'] ] ) : ''; ?>" min="1" step="1" max="36525">
 
 			<?php
 
@@ -278,7 +285,7 @@ class Settings {
 
 			?>
 
-			<select id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]">
+			<select id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]">
 				<?php
 				foreach ( $field['options'] as $key => $option ) {
 					?>
@@ -296,7 +303,7 @@ class Settings {
 
 			?>
 
-			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_html( $settings[ $field['id'] ] ) : ''; ?>">
+			<input type="text" id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]" value="<?php echo isset( $settings[ $field['id'] ] ) ? esc_html( $settings[ $field['id'] ] ) : ''; ?>">
 
 			<?php
 
@@ -306,7 +313,7 @@ class Settings {
 
 			?>
 
-			<textarea id="<?php echo esc_attr( $field['id'] ); ?>" name="old_post_notice_settings[<?php echo esc_attr( $field['id'] ); ?>]"><?php echo isset( $settings[ $field['id'] ] ) ? esc_textarea( $settings[ $field['id'] ] ) : ''; ?></textarea>
+			<textarea id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( self::OPTION_NAME ); ?>[<?php echo esc_attr( $field['id'] ); ?>]"><?php echo isset( $settings[ $field['id'] ] ) ? esc_textarea( $settings[ $field['id'] ] ) : ''; ?></textarea>
 
 			<?php
 
