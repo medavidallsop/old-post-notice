@@ -123,6 +123,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 == Changelog ==
 
 = 2.2.0 - 0000-00-00 =
+* Update: Composer script targets
 * Update: Settings option name retrieval improvements
 * Update: WordPress minimum version to 5.5.0 due to use of core WordPress functions introduced in this version
 
