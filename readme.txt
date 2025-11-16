@@ -122,6 +122,9 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
+= 2.2.0 - 0000-00-00 =
+* Update: Settings option name retrieval improvements
+
 = 2.1.0 - 2025-10-20 =
 * Add: Old post notice metabox to old posts
 * Add: Replace or append to default notice functionality when editing old posts
