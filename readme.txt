@@ -70,7 +70,7 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 = Filter Hooks =
 
-- `old_post_notice_before_append( \$append_content )` - Add content before an appended notice set on a post.
+- `old_post_notice_before_append`: Add content before an appended notice.
 
 == Frequently Asked Questions ==
 
