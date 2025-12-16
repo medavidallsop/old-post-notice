@@ -22,6 +22,7 @@ namespace OPN\OldPostNotice;
 
 defined( 'ABSPATH' ) or exit;
 
+require_once __DIR__ . '/vendor_prefixed/autoload.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 use OPN\OldPostNotice\Enqueues;
@@ -99,7 +100,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		}
 
 		/**
-		 * Initialize hooks for activation, deactivation, installation, updates, and textdomain loading.
+		 * Initialize hooks for activation, deactivation, installation, updates, etc.
 		 *
 		 * @return void
 		 * @since 2.0.0
