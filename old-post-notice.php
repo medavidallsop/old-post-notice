@@ -108,25 +108,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		private function init_hooks(): void {
 			register_activation_hook( __FILE__, array( Activator::class, 'activate' ) );
 			register_deactivation_hook( __FILE__, array( Deactivator::class, 'deactivate' ) );
-			add_action( 'init', array( $this, 'load_textdomain' ) );
-			add_action( 'init', array( $this, 'install_or_update' ) ); // After load_textdomain as i18n strings maybe needed in install/update tasks.
-		}
-
-		/**
-		 * Load plugin textdomain for translations.
-		 *
-		 * The load_plugin_textdomain function is not needed in WordPress v4.6+ for WordPress.org plugins (and v6.8+ for self-hosted).
-		 * It is still included here to ensure compatibility with older WordPress versions.
-		 *
-		 * @return void
-		 * @since 2.0.0
-		 */
-		public function load_textdomain(): void {
-			load_plugin_textdomain(
-				'old-post-notice',
-				false,
-				dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/'
-			);
+			add_action( 'init', array( $this, 'install_or_update' ) );
 		}
 
 		/**
