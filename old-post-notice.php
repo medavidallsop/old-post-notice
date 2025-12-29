@@ -6,8 +6,8 @@
  * Author: David Allsop
  * Author URI: https://davidallsop.com
  * Version: 2.1.0
- * Requires PHP: 7.4.0
- * Requires at least: 5.5.0
+ * Requires PHP: 7.4
+ * Requires at least: 5.5
  * Domain Path: /i18n/languages/
  * Text Domain: old-post-notice
  * License: GNU General Public License v3.0

@@ -3,8 +3,8 @@ Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old post notice, outdated content alert, archive post management, post date notice, old post plugin
 Stable tag: 2.1.0
-Requires PHP: 7.4.0
-Requires at least: 5.0.0
+Requires PHP: 7.4
+Requires at least: 5.0
 Tested up to: 6.8
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
