@@ -1,5 +1,9 @@
 {
 	"config": {
-		"autoloader-suffix": "OPNOldPostNoticeScoped"
+		"autoloader-suffix": "OPNOldPostNoticeScoped",
+		"platform": {
+			"php": "7.4"
+		},
+		"platform-check": false
 	}
 }

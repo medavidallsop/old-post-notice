@@ -46,12 +46,13 @@
 		"wpify/scoper": "^3.2"
 	},
 	"config": {
-		"autoloader-suffix": "OPNOldPostNotice",
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"wpify/wpify-scoper": true,
 			"wpify/scoper": true
-		}
+		},
+		"autoloader-suffix": "OPNOldPostNotice",
+		"platform-check": false
 	},
 	"extra": {
 		"wpify-scoper": {
