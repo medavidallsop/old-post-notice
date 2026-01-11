@@ -68,10 +68,6 @@ This setup improves user experience, boosts blog engagement, and ensures that vi
 
 After installation, access the settings under **Settings > Old Post Notice**. Once enabled, the notice will appear on old posts according to your configured settings.
 
-= Filter Hooks =
-
-- `old_post_notice_before_append`: Add content before an appended notice.
-
 == Frequently Asked Questions ==
 
 = Can I replace or append to the default notice? =
@@ -123,9 +119,11 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 == Changelog ==
 
 = 2.2.0 - 0000-00-00 =
-* Update: Composer script targets
+* Add: Scaffolding for scoped dependencies
+* Update: Composer script updates
 * Update: Settings option name retrieval improvements
 * Update: WordPress minimum version to 5.5.0 due to use of core WordPress functions introduced in this version
+* Fix: load_plugin_textdomain code no longer needed
 
 = 2.1.0 - 2025-10-20 =
 * Add: Old post notice metabox to old posts
