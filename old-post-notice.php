@@ -5,7 +5,7 @@
  * Description: Automatically display a customizable notice on posts older than a set number of days.
  * Author: David Allsop
  * Author URI: https://davidallsop.com
- * Version: 2.1.0
+ * Version: 2.2.0
  * Requires PHP: 7.4
  * Requires at least: 5.5
  * Domain Path: /i18n/languages/
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		 * @var string
 		 * @since 2.0.0
 		 */
-		public $version = '2.1.0';
+		public $version = '2.2.0';
 
 		/**
 		 * Main instance of the plugin.
