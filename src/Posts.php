@@ -99,13 +99,11 @@ class Posts {
 		// Check if required POST data is present.
 		if ( ! isset( $_POST['nonce'] ) || ! isset( $_POST['type'] ) ) {
 			wp_send_json_error( array( 'message' => __( 'Missing required data.', 'old-post-notice' ) ) );
-			return;
 		}
 
 		// Verify nonce.
 		if ( ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'old_post_notice_admin' ) ) {
 			wp_send_json_error( array( 'message' => __( 'Security check failed.', 'old-post-notice' ) ) );
-			return;
 		}
 
 		try {

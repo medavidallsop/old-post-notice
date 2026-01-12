@@ -1,3 +1,8 @@
-# See default ignore list: https://prettier.io/docs/ignore#ignoring-files-prettierignore
+# See default ignore list: https://prettier.io/docs/ignore#ignoring-files-prettierignore.
+
+# Ignore minified files in the assets folder (and its subfolders).
 assets/**/*.min.*
+
+# Ignore vendor directories (anywhere).
 **/vendor
+**/vendor_prefixed

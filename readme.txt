@@ -2,10 +2,10 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old post notice, outdated content alert, archive post management, post date notice, old post plugin
-Requires at least: 5.0.0
+Stable tag: 2.2.0
+Requires PHP: 7.4
+Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 2.1.0
-Requires PHP: 7.4.0
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,7 +19,7 @@ Keep your readers informed about outdated content with the Old Post Notice WordP
 
 Ideal for managing archived posts, alerting visitors, and improving content engagement.
 
-= Benefits =
+== ✨ Benefits ==
 
 1. **Inform Readers About Outdated Content**
 Use the Old Post Notice plugin to alert visitors when a post is older than a set number of days, helping maintain trust and improve user experience on blogs and websites.
@@ -36,7 +36,7 @@ Encourage readers to explore newer posts by clearly marking older content, incre
 5. **Customize Notices for Branding**
 Use default styling or custom CSS to match your blog's design, ensuring the old post notice fits seamlessly with your site's look and feel.
 
-= Example Use Case: Jane's Travel Blog =
+== 📖 Example Use Case: Jane's Travel Blog ==
 
 Jane runs a popular WordPress travel blog with hundreds of posts spanning several years. She wants to alert readers to outdated content so visitors aren't misled by old information, like hotel prices or travel tips that have changed.
 
@@ -49,7 +49,7 @@ By installing the Old Post Notice plugin, Jane can:
 
 This setup improves user experience, boosts blog engagement, and ensures that visitors are aware of outdated content, all while maintaining a polished, professional look on her WordPress site.
 
-= Features =
+== ⚡ Features ==
 
 - Enable or disable the old post notice.
 - Customize the notice text and styling.
@@ -64,13 +64,9 @@ This setup improves user experience, boosts blog engagement, and ensures that vi
 - Replace or append to the default notice on individual posts.
 - Perfect for managing archived posts and keeping content up-to-date.
 
-= Usage =
+== 📚 Usage ==
 
 After installation, access the settings under **Settings > Old Post Notice**. Once enabled, the notice will appear on old posts according to your configured settings.
-
-= Filter Hooks =
-
-- `old_post_notice_before_append`: Add content before an appended notice.
 
 == Frequently Asked Questions ==
 
@@ -121,6 +117,12 @@ Please see [this documentation](https://wordpress.org/support/article/managing-p
 Please see [this documentation](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins).
 
 == Changelog ==
+
+= 2.2.0 - 0000-00-00 =
+* Add: Scaffolding for scoped dependencies
+* Update: Composer script updates
+* Update: Settings option name retrieval improvements
+* Fix: load_plugin_textdomain code no longer needed
 
 = 2.1.0 - 2025-10-20 =
 * Add: Old post notice metabox to old posts

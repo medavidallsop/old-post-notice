@@ -5,9 +5,9 @@
  * Description: Automatically display a customizable notice on posts older than a set number of days.
  * Author: David Allsop
  * Author URI: https://davidallsop.com
- * Version: 2.1.0
- * Requires at least: 5.0.0
- * Requires PHP: 7.4.0
+ * Version: 2.2.0
+ * Requires PHP: 7.4
+ * Requires at least: 5.5
  * Domain Path: /i18n/languages/
  * Text Domain: old-post-notice
  * License: GNU General Public License v3.0
@@ -22,6 +22,7 @@ namespace OPN\OldPostNotice;
 
 defined( 'ABSPATH' ) or exit;
 
+require_once __DIR__ . '/vendor_prefixed/autoload.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 use OPN\OldPostNotice\Enqueues;
@@ -56,7 +57,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		 * @var string
 		 * @since 2.0.0
 		 */
-		public $version = '2.1.0';
+		public $version = '2.2.0';
 
 		/**
 		 * Main instance of the plugin.
@@ -99,7 +100,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		}
 
 		/**
-		 * Initialize hooks for activation, deactivation, installation, updates, and textdomain loading.
+		 * Initialize hooks for activation, deactivation, installation, updates, etc.
 		 *
 		 * @return void
 		 * @since 2.0.0
@@ -107,25 +108,7 @@ if ( ! class_exists( 'Old_Post_Notice' ) ) {
 		private function init_hooks(): void {
 			register_activation_hook( __FILE__, array( Activator::class, 'activate' ) );
 			register_deactivation_hook( __FILE__, array( Deactivator::class, 'deactivate' ) );
-			add_action( 'init', array( $this, 'load_textdomain' ) );
-			add_action( 'init', array( $this, 'install_or_update' ) ); // After load_textdomain as i18n strings maybe needed in install/update tasks.
-		}
-
-		/**
-		 * Load plugin textdomain for translations.
-		 *
-		 * The load_plugin_textdomain function is not needed in WordPress v4.6+ for WordPress.org plugins (and v6.8+ for self-hosted).
-		 * It is still included here to ensure compatibility with older WordPress versions.
-		 *
-		 * @return void
-		 * @since 2.0.0
-		 */
-		public function load_textdomain(): void {
-			load_plugin_textdomain(
-				'old-post-notice',
-				false,
-				dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages/'
-			);
+			add_action( 'init', array( $this, 'install_or_update' ) );
 		}
 
 		/**

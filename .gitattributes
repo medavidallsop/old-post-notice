@@ -1,0 +1,5 @@
+# This line ensures the vendor/vendor_prefixed folders (anywhere) are not scanned during version:wp:check.
+# The version:wp:check script uses WP Since (https://github.com/eduardovillao/wp-since) which scans all .php files.
+# Only the plugin's own .php files should be scanned, not vendor/vendor_prefixed .php files.
+vendor/ export-ignore
+vendor_prefixed/ export-ignore
