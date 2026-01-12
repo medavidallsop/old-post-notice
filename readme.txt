@@ -5,7 +5,7 @@ Tags: old post notice, outdated content alert, archive post management, post dat
 Stable tag: 2.2.0
 Requires PHP: 7.4
 Requires at least: 5.5
-Tested up to: 6.8
+Tested up to: 6.9
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -118,7 +118,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 2.2.0 - 0000-00-00 =
+= 2.2.0 - 2026-01-12 =
 * Add: Scaffolding for scoped dependencies
 * Update: Composer script updates
 * Update: Settings option name retrieval improvements
