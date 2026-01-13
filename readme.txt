@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old post notice, outdated content alert, archive post management, post date notice, old post plugin
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 Requires PHP: 7.4
 Requires at least: 5.5
 Tested up to: 6.9
@@ -117,6 +117,9 @@ Please see [this documentation](https://wordpress.org/support/article/managing-p
 Please see [this documentation](https://wordpress.org/documentation/article/manage-plugins/#updating-plugins).
 
 == Changelog ==
+
+= 2.2.1 - 0000-00-00 =
+* Fix: Save settings can cause an error on PHP 7.4
 
 = 2.2.0 - 2026-01-12 =
 * Add: Scaffolding for scoped dependencies

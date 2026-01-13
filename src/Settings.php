@@ -216,10 +216,10 @@ class Settings {
 	 * Sanitize the settings.
 	 *
 	 * @param array $settings The settings to sanitize.
-	 * @return mixed Sanitized settings.
+	 * @return array Sanitized settings.
 	 * @since 2.0.0
 	 */
-	public function sanitize_settings( array $settings ): mixed {
+	public function sanitize_settings( array $settings ): array {
 		// Sanitize all settings with sanitize_text_field except the notice field.
 		$sanitized_settings = array();
 

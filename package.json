@@ -1,6 +1,6 @@
 {
 	"name": "opn/old-post-notice",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"scripts": {
 		"build": "echo '\u001b[32mRunning build...\u001b[0m' && pnpm run build:i18n",
 		"build:assets": "echo '\u001b[32mRunning build:assets...\u001b[0m' && pnpm run build:assets:bundle && pnpm run build:assets:static",
