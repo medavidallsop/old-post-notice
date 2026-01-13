@@ -118,7 +118,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 2.2.1 - 0000-00-00 =
+= 2.2.1 - 2026-01-13 =
 * Fix: Save settings can cause an error on PHP 7.4
 
 = 2.2.0 - 2026-01-12 =
