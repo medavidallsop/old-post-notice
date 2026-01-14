@@ -217,7 +217,7 @@ class Posts {
 		} elseif ( 'modified' === $date ) {
 
 			// translators: %s: days.
-			echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their modified date is more than%s days ago', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
+			echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their modified date is more than %s days ago', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
 
 		}
 
