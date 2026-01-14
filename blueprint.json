@@ -1,0 +1,25 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/wp-admin/options-general.php?page=old-post-notice",
+	"steps": [
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "wordpress.org/plugins",
+				"slug": "old-post-notice"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php \nrequire_once 'wp-load.php';\n\n$post_data = array(\n    'post_title'    => 'A Flashback to 2020',\n    'post_content'  => 'This is an old post created to test the Old Post Notice plugin.',\n    'post_status'   => 'publish',\n    'post_author'   => 1,\n    'post_date'     => '2020-01-01 12:00:00',\n    'post_date_gmt' => '2020-01-01 12:00:00'\n);\n\nwp_insert_post($post_data);\n?>"
+		}
+	]
+}

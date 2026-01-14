@@ -36,3 +36,6 @@ Thumbs.db
 *.sql
 *.tar.gz
 *.zip
+
+# Ignore WordPress.org blueprint (root).
+blueprint.json
