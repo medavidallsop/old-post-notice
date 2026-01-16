@@ -70,7 +70,6 @@ class Enqueues {
 		if ( 'settings_page_old-post-notice' === $hook ) {
 			wp_enqueue_style( 'wp-color-picker' );
 		}
-
 	}
 
 	/**
