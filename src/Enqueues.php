@@ -26,12 +26,11 @@ class Enqueues {
 	/**
 	 * Enqueue the admin assets.
 	 *
+	 * @param string $hook Current admin page hook.
 	 * @return void
 	 * @since 2.0.0
 	 */
-	public function enqueue_admin_assets(): void {
-		global $pagenow;
-
+	public function enqueue_admin_assets( string $hook ): void {
 		wp_enqueue_script( 'jquery' );
 
 		wp_enqueue_script(
@@ -68,17 +67,10 @@ class Enqueues {
 			OLD_POST_NOTICE_PLUGIN_VERSION
 		);
 
-		if ( 'options-general.php' === $pagenow ) {
-
-			if ( isset( $_GET['page'] ) ) {
-
-				if ( 'old-post-notice' === $_GET['page'] ) {
-
-					wp_enqueue_style( 'wp-color-picker' );
-
-				}
-			}
+		if ( 'settings_page_old-post-notice' === $hook ) {
+			wp_enqueue_style( 'wp-color-picker' );
 		}
+
 	}
 
 	/**
