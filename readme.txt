@@ -72,9 +72,9 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 = Can I replace or append to the default notice? =
 
-Yes. When editing individual old posts, you can set a notice and choose whether to replace the default notice or append to it.
+Yes. When editing old posts, you can set a notice and choose whether to replace the default notice or append to it.
 
-This is a meta box, so it is compatible with both the Block and Classic editors. On the block editor, you may need to reveal the meta box by using the resize bar at the bottom.
+This is a meta box, so it is compatible with both the Block and Classic editors. On the block editor, the meta box is at the bottom of the page.
 
 = Can I see a list of posts displaying the old post notice? =
 
