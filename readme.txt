@@ -118,7 +118,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
-= 2.2.2 - 0000-00-00 =
+= 2.2.2 - 2026-01-16 =
 * Update: Improve enqueue of settings page color picker library so works on WordPress playground environment
 * Update: When old post notice disabled, dashboard page/widget info that "these pages display a notice" is hidden
 * Update: Meta box naming changes

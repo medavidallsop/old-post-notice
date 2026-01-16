@@ -1,21 +1,21 @@
 # If copying the contents of this file to a .po file remember to add a Language: xx_XX header.
 msgid ""
 msgstr ""
-"Project-Id-Version: Old Post Notice 2.2.1\n"
+"Project-Id-Version: Old Post Notice 2.2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-13T21:03:16+00:00\n"
+"POT-Creation-Date: 2026-01-16T17:03:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: old-post-notice\n"
 
 #. Plugin Name of the plugin
 #: old-post-notice.php
-#: src/Posts.php:285
+#: src/Posts.php:291
 #: src/Settings.php:344
 msgid "Old Post Notice"
 msgstr ""
@@ -59,55 +59,55 @@ msgid "Old Posts"
 msgstr ""
 
 #. translators: %s: days.
-#: src/Posts.php:215
+#: src/Posts.php:220
 #, php-format
 msgid "These posts display an old post notice because their published date is more than %s days ago."
 msgstr ""
 
 #. translators: %s: days.
-#: src/Posts.php:220
+#: src/Posts.php:225
 #, php-format
-msgid "These posts display an old post notice because their modified date is more than%s days ago"
+msgid "These posts display an old post notice because their modified date is more than %s days ago"
 msgstr ""
 
-#: src/Posts.php:226
+#: src/Posts.php:232
 #: src/Settings.php:380
 msgid "Settings"
 msgstr ""
 
-#: src/Posts.php:236
+#: src/Posts.php:242
 msgid "Post"
 msgstr ""
 
-#: src/Posts.php:237
+#: src/Posts.php:243
 msgid "Published"
 msgstr ""
 
-#: src/Posts.php:238
+#: src/Posts.php:244
 msgid "Modified"
 msgstr ""
 
-#: src/Posts.php:243
+#: src/Posts.php:249
 msgid "Fetching old posts..."
 msgstr ""
 
-#: src/Posts.php:254
+#: src/Posts.php:260
 msgid "View all old posts"
 msgstr ""
 
-#: src/Posts.php:258
+#: src/Posts.php:264
 msgid "Enable the dashboard page to view more old posts"
 msgstr ""
 
-#: src/Posts.php:306
+#: src/Posts.php:312
 msgid "This is an old post, it will display a default notice to the user. You can replace the default notice or append to it."
 msgstr ""
 
-#: src/Posts.php:310
+#: src/Posts.php:316
 msgid "Replace default notice"
 msgstr ""
 
-#: src/Posts.php:311
+#: src/Posts.php:317
 msgid "Append to default notice"
 msgstr ""
 
