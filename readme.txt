@@ -2,7 +2,7 @@
 Contributors: medavidallsop
 Donate link: https://github.com/sponsors/medavidallsop
 Tags: old post notice, outdated content alert, archive post management, post date notice, old post plugin
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 Requires PHP: 7.4
 Requires at least: 5.5
 Tested up to: 6.9
@@ -72,9 +72,9 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 = Can I replace or append to the default notice? =
 
-Yes. When editing individual old posts, you can set a notice and choose whether to replace the default notice or append to it.
+Yes. When editing old posts, you can set a notice and choose whether to replace the default notice or append to it.
 
-This is a metabox, so it is compatible with both the Block and Classic editors. On the block editor, you may need to reveal the metabox by using the resize bar at the bottom.
+This is a meta box, so it is compatible with both the Block and Classic editors. On the block editor, the meta box is at the bottom of the page.
 
 = Can I see a list of posts displaying the old post notice? =
 
@@ -118,6 +118,12 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 
 == Changelog ==
 
+= 2.2.2 - 0000-00-00 =
+* Update: Improve enqueue of settings page color picker library so works on WordPress playground environment
+* Update: When old post notice disabled, dashboard page/widget info that "these pages display a notice" is hidden
+* Update: Meta box naming changes
+* Fix: Add missing space to "These posts display an old post notice because their modified date..." string
+
 = 2.2.1 - 2026-01-13 =
 * Fix: Save settings can cause an error on PHP 7.4
 
@@ -128,7 +134,7 @@ Please see [this documentation](https://wordpress.org/documentation/article/mana
 * Fix: load_plugin_textdomain code no longer needed
 
 = 2.1.0 - 2025-10-20 =
-* Add: Old post notice metabox to old posts
+* Add: Old post notice meta box to old posts
 * Add: Replace or append to default notice functionality when editing old posts
 * Add: old_post_notice_before_append filter hook
 * Update: Allow HTML in notice
