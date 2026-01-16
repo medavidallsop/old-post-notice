@@ -207,18 +207,24 @@ class Posts {
 		$settings       = Settings::get_settings();
 		$days           = $settings['days'];
 		$date           = $settings['date'];
+		$enable         = ( isset( $settings['enable'] ) ? $settings['enable'] : '0' );
 		$dashboard_page = ( isset( $settings['dashboard_page'] ) ? $settings['dashboard_page'] : '0' );
 
-		if ( 'published' === $date ) {
+		if ( '1' === $enable ) {
 
-			// translators: %s: days.
-			echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their published date is more than %s days ago.', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
+			// This text is only shown if old post notice is enabled, as posts don't display a notice if disabled.
 
-		} elseif ( 'modified' === $date ) {
+			if ( 'published' === $date ) {
 
-			// translators: %s: days.
-			echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their modified date is more than %s days ago', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
+				// translators: %s: days.
+				echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their published date is more than %s days ago.', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
 
+			} elseif ( 'modified' === $date ) {
+
+				// translators: %s: days.
+				echo '<p>' . sprintf( esc_html__( 'These posts display an old post notice because their modified date is more than %s days ago', 'old-post-notice' ), esc_html( $days ) ) . '</p>';
+
+			}
 		}
 
 		if ( 'page' === $type ) {
