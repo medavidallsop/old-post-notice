@@ -22,8 +22,8 @@ class Posts {
 		add_action( 'wp_ajax_old_post_notice_old_posts', array( $this, 'get_old_posts_ajax' ) );
 		add_action( 'admin_menu', array( $this, 'add_dashboard_page' ) );
 		add_action( 'wp_dashboard_setup', array( $this, 'add_dashboard_widget' ) );
-		add_action( 'add_meta_boxes', array( $this, 'add_metabox' ) );
-		add_action( 'save_post', array( $this, 'save_metabox' ) );
+		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
+		add_action( 'save_post', array( $this, 'save_meta_box' ) );
 	}
 
 	/**
@@ -268,12 +268,12 @@ class Posts {
 	}
 
 	/**
-	 * Add the metabox.
+	 * Add the meta box.
 	 *
 	 * @return void
-	 * @since 2.1.0
+	 * @since 2.2.2
 	 */
-	public function add_metabox(): void {
+	public function add_meta_box(): void {
 		// Check user capability.
 		if ( ! current_user_can( 'edit_posts' ) ) {
 			return;
@@ -285,11 +285,11 @@ class Posts {
 			return;
 		}
 
-		// Add metabox.
+		// Add meta box.
 		add_meta_box(
-			'old_post_notice_metabox',
+			'old_post_notice_meta_box',
 			esc_html__( 'Old Post Notice', 'old-post-notice' ),
-			array( $this, 'metabox_render' ),
+			array( $this, 'meta_box_render' ),
 			'post',
 			'normal',
 			'default',
@@ -297,21 +297,21 @@ class Posts {
 	}
 
 	/**
-	 * Render the metabox.
+	 * Render the meta box.
 	 *
 	 * @param \WP_Post $post The post object.
 	 * @return void
-	 * @since 2.1.0
+	 * @since 2.2.2
 	 */
-	public function metabox_render( \WP_Post $post ): void {
+	public function meta_box_render( \WP_Post $post ): void {
 		$notes_value    = get_post_meta( $post->ID, '_old_post_notice', true );
 		$behavior_value = get_post_meta( $post->ID, '_old_post_notice_behavior', true );
 
-		wp_nonce_field( 'old_post_notice_save_metabox', 'old_post_notice_metabox_nonce' );
+		wp_nonce_field( 'old_post_notice_save_meta_box', 'old_post_notice_meta_box_nonce' );
 
-		echo '<textarea id="old-post-notice-metabox-notice" name="old_post_notice" placeholder="' . esc_attr__( 'This is an old post, it will display a default notice to the user. You can replace the default notice or append to it.', 'old-post-notice' ) . '">' . esc_textarea( $notes_value ) . '</textarea>';
+		echo '<textarea id="old-post-notice-meta-box-notice" name="old_post_notice" placeholder="' . esc_attr__( 'This is an old post, it will display a default notice to the user. You can replace the default notice or append to it.', 'old-post-notice' ) . '">' . esc_textarea( $notes_value ) . '</textarea>';
 
-		echo '<p><select id="old-post-notice-metabox-behavior" name="old_post_notice_behavior">';
+		echo '<p><select id="old-post-notice-meta-box-behavior" name="old_post_notice_behavior">';
 		$options = array(
 			'replace' => esc_html__( 'Replace default notice', 'old-post-notice' ),
 			'append'  => esc_html__( 'Append to default notice', 'old-post-notice' ),
@@ -328,16 +328,16 @@ class Posts {
 	}
 
 	/**
-	 * Save the metabox values.
+	 * Save the meta box values.
 	 *
 	 * @param int $post_id The post ID.
 	 * @return void
-	 * @since 2.1.0
+	 * @since 2.2.2
 	 */
-	public function save_metabox( int $post_id ): void {
+	public function save_meta_box( int $post_id ): void {
 		// Verify nonce.
-		if ( ! isset( $_POST['old_post_notice_metabox_nonce'] ) ||
-			! wp_verify_nonce( $_POST['old_post_notice_metabox_nonce'], 'old_post_notice_save_metabox' ) ) {
+		if ( ! isset( $_POST['old_post_notice_meta_box_nonce'] ) ||
+			! wp_verify_nonce( $_POST['old_post_notice_meta_box_nonce'], 'old_post_notice_save_meta_box' ) ) {
 			return;
 		}
 
