@@ -68,6 +68,10 @@ This setup improves user experience, boosts blog engagement, and ensures that vi
 
 After installation, access the settings under **Settings > Old Post Notice**. Once enabled, the notice will appear on old posts according to your configured settings.
 
+== 🧑‍💻 Developer ==
+
+Old Post Notice is created by [David Allsop](https://davidallsop.com). Additional details and related blog posts are available on the [project page](https://davidallsop.com/work/old-post-notice/).
+
 == Frequently Asked Questions ==
 
 = Can I replace or append to the default notice? =
@@ -100,11 +104,12 @@ This will display: [Default notice] + "My Heading" + [Your appended notice].
 
 == Screenshots ==
 
-1. Post displaying the old post notice.
-2. Includes several settings to configure the old post notice.
-3. Adds a page under the Posts menu that lists all posts displaying the old post notice.
-4. Adds a widget to the dashboard homepage that lists all posts displaying the old post notice.
-5. Replace or append to the default notice when editing a post.
+1. Automatically display a customizable notice on posts older than a set number of days.
+2. Post displaying the old post notice.
+3. Includes several settings to configure the old post notice.
+4. Adds a page under the Posts menu that lists all posts displaying the old post notice.
+5. Adds a widget to the dashboard homepage that lists all posts displaying the old post notice.
+6. Replace or append to the default notice when editing a post.
 
 == Installation ==
 
