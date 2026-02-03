@@ -70,7 +70,7 @@ After installation, access the settings under **Settings > Old Post Notice**. On
 
 == 🧑‍💻 Developer ==
 
-Old Post Notice is created by [David Allsop](https://davidallsop.com). Additional details and related blog posts are available on the [project page](https://davidallsop.com/work/old-post-notice/).
+Created by [David Allsop](https://davidallsop.com). Additional details are available on the [project page](https://davidallsop.com/work/old-post-notice/).
 
 == Frequently Asked Questions ==
 
